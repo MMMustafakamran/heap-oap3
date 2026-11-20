@@ -1,6 +1,6 @@
 name: Daily QA run
 
-# Daily doc-QA run for Antigravity-Angular (generated from the workspace template; README "Daily CI").
+# Daily doc-QA run for OpenAI Agents-Angular (generated from the workspace template; README "Daily CI").
 #   plan    -> doc drift: pages whose doc changed are held, not recorded (DRIFT.md);
 #              versions a new reader gets today (CopilotKit + AG-UI latest); page list split into shards
 #   record  -> one runner per shard: today's lockfiles, own servers (start-all.sh), records its pages
@@ -255,9 +255,8 @@ jobs:
       matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
     env:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      # HARNESS: Gemini pool (tools/gemini_pool.py on :8295): Gemini key(s) first, OpenAI only as the last-resort fallback.
-      GEMINI_POOL_KEYS: ${{ secrets.GEMINI_POOL_KEYS || secrets.GEMINI_API_KEY }}
-      GEMINI_POOL_OPENAI_KEY: ${{ secrets.OPENAI_API_KEY }}
+      # HARNESS: threads pages (QA-RULES 9a); frontend/server.ts mounts /threads only when set.
+      CPK_INTELLIGENCE_API_KEY: ${{ secrets.CPK_INTELLIGENCE_API_KEY }}
     steps:
       - uses: actions/checkout@v4
       - name: Today's lockfiles from the plan job
@@ -331,7 +330,7 @@ jobs:
       - name: Write env files (secret from repo settings, never logged)
         run: |
           set -eu
-          [ -n "${GEMINI_POOL_KEYS:-}${GEMINI_POOL_OPENAI_KEY:-}" ] || echo "::warning::no Gemini/OpenAI secret set; the Antigravity agent will fail"
+          [ -n "${GEMINI_POOL_KEYS:-}${GEMINI_POOL_OPENAI_KEY:-}" ] || echo "::warning::no Gemini/OpenAI secret set; the OpenAI Agents agent will fail"
           # HARNESS: real keys live in the pool on :8295 (job env); dummy key + base URL + local workspace dirs here.
           printf 'GEMINI_API_KEY=pool\nGOOGLE_API_KEY=pool\nGOOGLE_GEMINI_BASE_URL=http://localhost:8295\nANTIGRAVITY_WORKSPACE=./.ws\nANTIGRAVITY_SAVE_DIR=./.sessions\n' > backend/.env
 
