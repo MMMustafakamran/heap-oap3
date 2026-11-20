@@ -1,0 +1,9 @@
+{
+ "text": "Moving on to the demo. After marking high priority I asked the agent, it should say high, but it can't tell what the priority is.",
+ "model": "s2.1-pro-free",
+ "refSha256": "2c9d0ecf4608feacc07c88e869cd4dec601481306a939b7be92fc1bff521a727",
+ "duration": 9.52,
+ "file": "68556552fd96257a9c2737be9795c1f1.mp3",
+ "clip": "OAP-angular-16-SharedState",
+ "at": "demo"
+}

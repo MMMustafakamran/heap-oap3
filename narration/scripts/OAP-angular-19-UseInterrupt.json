@@ -1,0 +1,38 @@
+{
+ "clip": "OAP-angular-19-UseInterrupt",
+ "page": "use-interrupt",
+ "segments": [
+  {
+   "at": "doc",
+   "text": "Ok so this is the Pausing the Agent for Input page for OpenAI Agents with Angular, and I'm reporting a problem on this page."
+  },
+  {
+   "at": "evidence",
+   "text": "So this is the problem, it talks about the backend agent pausing for input, but no backend that pauses is shown."
+  },
+  {
+   "at": "evidence#2",
+   "text": "And this watches the default agent, which never interrupts."
+  },
+  {
+   "at": "ide",
+   "text": "This is my project, I've implemented the exact code from the doc."
+  },
+  {
+   "at": "demo",
+   "text": "Moving on to the demo. I asked it to ship the release, it should show a review panel, but the agent just answers, nothing pauses."
+  },
+  {
+   "at": "notepad",
+   "text": "So basically, the page needs an agent that interrupts but never gives one."
+  },
+  {
+   "at": "+",
+   "text": "And it doesn't say what the payload should look like either."
+  },
+  {
+   "at": "+",
+   "text": "That's it for this one, kindly look into this issue."
+  }
+ ]
+}

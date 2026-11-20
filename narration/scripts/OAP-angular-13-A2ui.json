@@ -1,0 +1,38 @@
+{
+ "clip": "OAP-angular-13-A2ui",
+ "page": "a2ui",
+ "segments": [
+  {
+   "at": "doc",
+   "text": "Ok so this is the A2UI page for OpenAI Agents with Angular, and I'm reporting a problem on this page."
+  },
+  {
+   "at": "evidence",
+   "text": "So this is the problem, umm, the catalog here, product catalog, is never defined anywhere."
+  },
+  {
+   "at": "evidence#2",
+   "text": "And the page itself says without a catalog, A2UI stays off."
+  },
+  {
+   "at": "ide",
+   "text": "This is my project, I've implemented the exact code from the doc."
+  },
+  {
+   "at": "demo",
+   "text": "Moving on to the demo. I asked for a flight card, it should render one, but nothing shows up, the agent just answers in text."
+  },
+  {
+   "at": "notepad",
+   "text": "So basically, the catalog the page needs is never shown, and the other snippets have no imports."
+  },
+  {
+   "at": "+",
+   "text": "So A2UI stays off and nothing renders."
+  },
+  {
+   "at": "+",
+   "text": "So yeah, please take a look and fix this."
+  }
+ ]
+}

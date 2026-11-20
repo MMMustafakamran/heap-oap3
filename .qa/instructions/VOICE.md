@@ -1,0 +1,107 @@
+# Voice narration rules
+
+Applies to every clip that reports a broken doc page: level 1 (blocker, full script) and level 2 (already reported ⚠️/❌, short script) of [QA-RULES.md](QA-RULES.md) §8a. Working and minor-issue clips have none. The narration covers the whole video, in the owner's cloned voice, as if recorded live.
+
+## 1. Voice
+
+- Service: **Fish Audio**, free model `s2.1-pro-free` (header `model: s2.1-pro-free`).
+  Key: `FISH_API_KEY` in the workspace `4-private/.env` locally, a GitHub secret in CI. **Never print or commit it.**
+- No saved voice on the free tier: each request sends the reference clip + its transcript.
+  - Reference: `4-private/voice-private/reference-new.wav` (102 s of the owner talking naturally through a testing script, recorded 2026-11-08; cleaned: high-pass, levelled, mono 44.1 kHz). The old `reference-20s.wav` is kept but no longer used.
+  - Transcript: `4-private/voice-private/reference-new.txt` (faster-whisper, technical terms corrected by hand).
+  - Tool: `qa-kit/narrate/narrate.py` (tts, fit, mix, rewrite; see its README).
+- Chatterbox (HF demo) was tried and rejected: robotic, didn't sound like the owner (Indian accent). Sarvam is blocked in the owner's region.
+- Known limit: tone stays fairly even through a clip. Accepted as good enough (2026-11-07).
+
+## 2. What may be public
+
+- Generated narration audio **may** be committed to the public repos.
+- The raw voice reference samples (`4-private/voice-private/*.wav`, `*.mp4`) and all API keys **must never** be committed. CI never needs them: it only reuses saved mp3 lines.
+
+## 3. Video
+
+- **Cuts only to remove a contradiction (owner, 2026-11-20).** Normally the video stays as recorded and the narration fits the real timing. When a clip's error differs from its note/narration, it may be trimmed or cut so the clip and the voice report the same, real error, only if it stays natural (few cuts) and the demo still shows the real error. Otherwise refilm ([WORKFLOW.md](WORKFLOW.md) A8).
+- **Silences are fine** (owner, 2026-11-08): no need to fill agent waits with talk. During a silence the room tone keeps playing, so it never sounds dead.
+- **No click or typing sounds** (owner, 2026-11-09): voice + room tone only (`narrate.py mix` adds clicks only with `--foley`).
+- **Background:** constant room tone (low fan hum + faint hiss), **steady at one fixed level for the whole clip** (no fades or ducking), slightly audible: ~20–24 dB below the voice. Gaps never sound digital.
+
+## 4. Lines and slots
+
+- Each script line is attached to a timeline mark label: `label` (first occurrence) or `label#n` (nth occurrence, 1-based), e.g. `doc`, `ide`, `demo`, `evidence#2`, `notepad`. Labels: [AUTORECORDER.md](AUTORECORDER.md) section 4. A second line in the same segment uses `at: "+"` (starts right after the previous line), never an invented label like `demo2`.
+- A line's slot runs from its mark to the next mark. Each line is generated separately and placed at the start of its slot.
+- `evidence` sits inside the `doc` segment, so the `doc` line's slot ends at the first `evidence` mark, not at `ide`. A `+` line shares its slot with the line before it.
+- The recorder waits for each line to finish before the next segment starts, so a line can't overlap it (owner, 2026-11-18). Still keep lines short: a long line only makes the clip wait.
+- Gaps between lines are allowed (the fit check reports them but never flags them).
+- Size each line at **~2.5 words/second** of slot length (style, not a hard limit).
+
+Finding clip, which line goes where (full ❌/⚠️ clip; level 2 in §5a):
+
+| Mark | Line | Rule |
+|---|---|---|
+| `doc` | opening line: page, framework, "reporting a problem" | 1 |
+| `evidence` | "This is the problem: …" (full clips only) | 1 |
+| `ide` | "This is my project…" | 3 |
+| `ide` `+` | "This part wasn't on the page…" (only when code was added) | 3 |
+| `demo` | "Moving on to the demo…" | 4 |
+| `notepad` | three-part recap (full clips only) | 5 |
+| `+` | polite ending, after the last line | 6 |
+
+## 5. Script rules (owner's instructions)
+
+1. **Doc page (opening line of `doc`):** don't explain what the page or feature is. Only say which page we're on and for which framework, then say we're reporting it: ❌ "and I'm reporting a problem on this page", ⚠️ "and I'm reporting a small issue on this page". Level-2 clips use the same line.
+   - e.g. "Ok so this is the Components page for Google ADK, and I'm reporting a problem on this page."
+   - e.g. "Ok so this is the frontend tools page for Agno, and I'm reporting a small issue on this page."
+   - **Evidence line (`evidence`, while the faulty doc text is drag-selected and held):** "This is the problem: <what's wrong in the doc>." The spoken form is in §5b. Full clips only.
+2. **No timing-specific lines.** The voice can't be synced to an exact click or moment, so never say "let me click it", "now I'm typing", "there it is". Say it generically, as a result:
+   - ✗ "let me click it… and yeah, there's the card"
+   - ✓ "after clicking the button, the card said deployment finished"
+3. **IDE part (`ide`):** "This is my project, I've implemented the exact code from the doc." If the tester added code the page didn't show (HARNESS, drag-selected via `addedText`), `ide +` follows: "This part wasn't on the page, I had to add it myself", then what it is (e.g. "the ADK agent"). Nothing added → only the first line. **Never say a version number** anywhere in the narration (owner, 2026-11-09): versions change often and every mention would need new audio. The versions file on screen shows them.
+4. **Demo (`demo`):** "Moving on to the demo." Then, as results (rule 2): ❌ "It should <expected>, but <what happened>." ⚠️ "The main part works, <it does X>, but <small defect>."
+5. **Notepad (`notepad`, full ❌/⚠️ clips):** the note has three parts in this order: what the doc says should happen → what happened instead → why it broke / what's missing. The voice recaps those in plain words while Notepad stays open (the recorder holds Notepad until these lines end). Same content as the note, not word-for-word.
+6. **Ending:** always a short, polite ask to fix it, but **vary the wording between clips**. Never reuse the same ending in two clips of one batch. It is the last line of the clip (the `notepad` `+` line on full clips, the `demo` `+` line on level-2 clips). Pool:
+   - "So yeah, this is the issue, kindly fix it."
+   - "So kindly look into it."
+   - "That's the problem here, please have a look."
+   - "So this needs a fix, kindly check it."
+   - "That's it for this one, kindly look into this issue."
+   - "So yeah, please take a look and fix this."
+   - "That's what's breaking here, kindly have it fixed."
+   - "So umm, this one needs fixing, please look into it."
+   - "Alright, that's the issue, kindly sort it out."
+   - "So yeah, kindly check this and fix it."
+7. Style: casual, short sentences, natural fillers ("ok so", "basically", "yeah"), plus **a few "umm" / "uh" / "ahh"** (one or two per segment, at natural hesitation points, not every sentence). Don't over-explain. Spell out what TTS would misread ("example dot com").
+
+## 5a. Short script (level 2: already reported)
+
+The clip is doc → IDE → demo and ends there: no evidence highlight, no Notepad. Three to four lines:
+1. `doc`: the page + framework, "and I'm reporting a problem on this page" (rule 1; ⚠️ pages use the small-issue line). No evidence line.
+2. `ide`: "This is my project, I've implemented the exact code from the doc." `ide +` with the added-code line when the clip shows added code (rule 3).
+3. `demo`: "Moving on to the demo", then what went wrong, as a result (rule 4), in one or two sentences. Same problem as the report row.
+4. `+` after the demo line: a varied polite ending (rule 6).
+
+No reasons or root-cause explaining: the team already reported it.
+
+## 5b. Worked example (Google ADK React, Components page)
+
+Problem: the section has agent code for other frameworks only, no Google ADK agent. The tester added the ADK agent (HARNESS). Demo: asked for a component, nothing renders, the reply is plain text. Full ❌ clip:
+
+| Mark | Line |
+|---|---|
+| `doc` | Ok so this is the Components page for Google ADK, and I'm reporting a problem on this page. |
+| `evidence` | So this is the problem, umm, the page only has agent code for other frameworks, there's no Google ADK agent anywhere in this section. |
+| `ide` | This is my project, and this frontend code is straight from the doc. |
+| `ide +` | This part, the ADK agent, wasn't given on the page, so I added it myself. |
+| `demo` | Moving on to the demo. I asked the agent for a component, it should have shown one in the chat, but nothing shows up, just a plain text reply. |
+| `notepad` | So basically, the page needs an ADK agent but never gives you one, so nothing renders. So yeah, kindly add the ADK code here. |
+
+## 6. Reuse
+
+- Audio is saved per finding (by finding number + exact script text).
+- Same error the next day, same script → reuse the saved audio. New or changed error → generate only that finding's lines.
+- Lines that would change every run (e.g. wait filler) are separate short pieces, regenerated cheaply. Versions are never spoken (§5 rule 3).
+
+## 7. Review and checks before handing a clip over
+
+- **No script approval needed (owner, 2026-11-09):** Claude Code writes the script and generates the audio locally (never in CI), then lists new scripts in its summary.
+- No voice cut off by the next segment. Silences are fine; the room tone must be audible through them.
+- Background level steady; transitions listened to.

@@ -1,0 +1,34 @@
+{
+ "clip": "OAP-angular-15-OpenGenerativeUi",
+ "page": "open-generative-ui",
+ "segments": [
+  {
+   "at": "doc",
+   "text": "Ok so this is the Open Generative UI page for OpenAI Agents with Angular, and I'm reporting a problem on this page."
+  },
+  {
+   "at": "evidence",
+   "text": "So this is the problem, umm, the page only shows the frontend config, the runtime flag that turns it on is never shown."
+  },
+  {
+   "at": "ide",
+   "text": "This is my project, I've implemented the exact code from the doc."
+  },
+  {
+   "at": "demo",
+   "text": "Moving on to the demo. It should render a small dashboard filter in a sandbox, but the agent just writes the buttons as plain HTML in its message."
+  },
+  {
+   "at": "notepad",
+   "text": "So basically, the page only gives the frontend part."
+  },
+  {
+   "at": "+",
+   "text": "Without the runtime open generative UI flag, nothing sandboxed ever renders."
+  },
+  {
+   "at": "+",
+   "text": "So umm, this one needs fixing, please look into it."
+  }
+ ]
+}

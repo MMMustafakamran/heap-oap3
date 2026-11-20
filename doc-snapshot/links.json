@@ -1,0 +1,237 @@
+{
+ "root": "angular/openai-agents-python",
+ "savedAt": "2026-11-20",
+ "pages": {
+  "/angular/ag2/build-with-agents": [],
+  "/angular/ag2/webmcp": [
+   "/angular/ag2/guides/frontend-tools-generative-ui"
+  ],
+  "/angular/ag2": [
+   "/angular/ag2/backend/copilot-runtime",
+   "/angular/ag2/inspector"
+  ],
+  "/angular/ag2/quickstart": [
+   "/angular/ag2/backend/copilot-runtime",
+   "/angular/ag2/inspector"
+  ],
+  "/angular/ag2/multi-agent/subagents": [
+   "/angular/ag2/guides/shared-state"
+  ],
+  "/angular/ag2/auth": [
+   "/angular/ag2/backend/copilot-runtime",
+   "/angular/ag2/backend/runtime-endpoints",
+   "/angular/ag2/runtime-server-adapter"
+  ],
+  "/angular/ag2/learning": [
+   "/angular/ag2/cli",
+   "/angular/ag2/guides/threads-memory-attachments-headless",
+   "/angular/ag2/inspector",
+   "/angular/ag2/intelligence/learned-skills",
+   "/angular/ag2/intelligence/memories",
+   "/angular/ag2/intelligence/overview",
+   "/angular/ag2/intelligence/quickstart",
+   "/angular/ag2/intelligence/standalone-collector",
+   "/angular/ag2/intelligence/threads-explained"
+  ],
+  "/angular/ag2/copilot-runtime": [
+   "/angular/ag2/agentic-protocols/ag-ui",
+   "/angular/ag2/guides/threads-memory-attachments-headless",
+   "/angular/ag2/guides/troubleshooting",
+   "/angular/ag2/inspector",
+   "/angular/ag2/intelligence/managed-intelligence-platform",
+   "/angular/ag2/intelligence/quickstart",
+   "/angular/ag2/intelligence/self-hosting",
+   "/angular/ag2/quickstart"
+  ],
+  "/angular/ag2/inspector": [
+   "/angular/ag2/guides/troubleshooting",
+   "/angular/ag2/inspector",
+   "/angular/ag2/troubleshooting/event-inspector"
+  ],
+  "/angular/ag2/ag-ui": [
+   "/angular/ag2/backend/custom-ag-ui-agent",
+   "/angular/ag2/quickstart"
+  ],
+  "/angular/ag2/using-these-docs": [
+   "/angular/ag2",
+   "/angular/ag2/backend/copilot-runtime",
+   "/angular/ag2/features",
+   "/angular/ag2/guides/chat-ui",
+   "/angular/ag2/guides/frontend-tools-generative-ui",
+   "/angular/ag2/guides/generative-ui-components",
+   "/angular/ag2/guides/human-in-the-loop",
+   "/angular/ag2/guides/shared-state",
+   "/angular/ag2/guides/threads-memory-attachments-headless",
+   "/angular/ag2/guides/troubleshooting",
+   "/angular/ag2/intelligence/overview"
+  ],
+  "/angular/ag2/features": [],
+  "/angular/ag2/guides/chat-ui": [
+   "/angular/ag2",
+   "/angular/ag2/features"
+  ],
+  "/angular/ag2/guides/frontend-tools-generative-ui": [
+   "/angular/ag2/features",
+   "/angular/ag2/guides/generative-ui-components"
+  ],
+  "/angular/ag2/guides/a2ui": [
+   "/angular/ag2/features",
+   "/angular/ag2/guides/frontend-tools-generative-ui"
+  ],
+  "/angular/ag2/guides/voice-multimodal": [
+   "/angular/ag2/features",
+   "/angular/ag2/guides/chat-ui",
+   "/angular/ag2/guides/voice-multimodal"
+  ],
+  "/angular/ag2/guides/human-in-the-loop": [
+   "/angular/ag2/features"
+  ],
+  "/angular/ag2/guides/shared-state": [
+   "/angular/ag2/features"
+  ],
+  "/angular/ag2/guides/threads-memory-attachments-headless": [
+   "/angular/ag2/features"
+  ],
+  "/angular/ag2/guides/troubleshooting": [
+   "/angular/ag2/auth",
+   "/angular/ag2/backend/runtime-endpoints",
+   "/angular/ag2/guides/frontend-tools-generative-ui",
+   "/angular/ag2/inspector",
+   "/angular/ag2/troubleshooting/common-issues",
+   "/angular/ag2/troubleshooting/debug-mode",
+   "/angular/ag2/troubleshooting/event-inspector"
+  ],
+  "/angular/ag2/contributing/code-contributions/package-linking": [],
+  "/angular/ag2/contributing/docs-contributions": [],
+  "/angular/ag2/telemetry": [],
+  "/angular/ag2/troubleshooting/common-issues": [
+   "/angular/ag2/backend/agent-runner",
+   "/angular/ag2/backend/runtime-endpoints",
+   "/angular/ag2/deploy/agentcore",
+   "/angular/ag2/guides/troubleshooting",
+   "/angular/ag2/intelligence/self-hosting"
+  ],
+  "/angular/ag2/community-frameworks": [],
+  "/angular/ag2/guides/generative-ui-components": [
+   "/angular/ag2/generative-ui/components",
+   "/angular/ag2/generative-ui/components/catalogs",
+   "/angular/ag2/generative-ui/components/markdown-mode",
+   "/angular/ag2/generative-ui/components/state-and-actions",
+   "/angular/ag2/generative-ui/components/surfaces",
+   "/angular/ag2/generative-ui/components/theming",
+   "/angular/ag2/generative-ui/components/transports",
+   "/angular/ag2/guides/a2ui"
+  ],
+  "/ag2/generative-ui/components/markdown-mode": [],
+  "/ag2/generative-ui/components": [],
+  "/ag2/generative-ui/components/catalogs": [],
+  "/ag2/generative-ui/components/state-and-actions": [],
+  "/ag2/generative-ui/components/from-a2ui": [],
+  "/ag2/generative-ui/components/surfaces": [],
+  "/ag2/generative-ui/components/theming": [],
+  "/ag2/generative-ui/components/transports": [],
+  "/generative-ui/components/standard-catalog": [],
+  "/angular/google-antigravity/frontend-tools": [],
+  "/angular/google-antigravity": [
+   "/angular/google-antigravity/backend/copilot-runtime",
+   "/angular/google-antigravity/inspector",
+   "/angular/google-antigravity/intelligence/overview"
+  ],
+  "/angular/google-antigravity/webmcp": [
+   "/angular/google-antigravity/frontend-tools"
+  ],
+  "/angular/google-antigravity/generative-ui": [],
+  "/angular/google-antigravity/build-with-agents": [],
+  "/angular/google-antigravity/multi-agent/subagents": [
+   "/angular/google-antigravity/shared-state",
+   "/angular/google-antigravity/shared-state/streaming"
+  ],
+  "/angular/google-antigravity/telemetry": [],
+  "/angular/google-antigravity/community-frameworks": [],
+  "/angular/google-antigravity/custom-look-and-feel/css": [],
+  "/angular/google-antigravity/prebuilt-components": [],
+  "/angular/google-antigravity/custom-look-and-feel/slots": [],
+  "/angular/google-antigravity/custom-look-and-feel/headless-ui": [],
+  "/angular/google-antigravity/multimodal-attachments": [],
+  "/angular/google-antigravity/prebuilt-components/copilot-threads-drawer": [],
+  "/angular/google-antigravity/voice": [
+   "/angular/google-antigravity/voice"
+  ],
+  "/angular/google-antigravity/generative-ui/mcp-apps": [],
+  "/angular/google-antigravity/headless-threads": [],
+  "/angular/google-antigravity/generative-ui/tool-rendering": [],
+  "/angular/google-antigravity/generative-ui/a2ui": [],
+  "/angular/google-antigravity/generative-ui/tool-based": [],
+  "/angular/google-antigravity/generative-ui/open-generative-ui": [],
+  "/angular/google-antigravity/shared-state": [],
+  "/angular/google-antigravity/shared-state/agent-readonly": [],
+  "/angular/google-antigravity/auth": [
+   "/angular/google-antigravity/backend/copilot-runtime",
+   "/angular/google-antigravity/backend/runtime-endpoints",
+   "/angular/google-antigravity/runtime-server-adapter"
+  ],
+  "/angular/google-antigravity/inspector": [
+   "/angular/google-antigravity/troubleshooting/event-inspector"
+  ],
+  "/angular/google-antigravity/human-in-the-loop/useInterrupt": [],
+  "/angular/google-antigravity/human-in-the-loop": [],
+  "/angular/google-antigravity/runtime-server-adapter": [
+   "/angular/google-antigravity/intelligence/quickstart"
+  ],
+  "/angular/google-antigravity/human-in-the-loop/headless": [],
+  "/angular/google-antigravity/vs-code-extension": [
+   "/angular/google-antigravity/troubleshooting/event-inspector"
+  ],
+  "/angular/openai-agents-python/multi-agent/subagents": [
+   "/angular/openai-agents-python/shared-state",
+   "/angular/openai-agents-python/shared-state/streaming"
+  ],
+  "/angular/openai-agents-python/build-with-agents": [],
+  "/angular/openai-agents-python/generative-ui": [],
+  "/angular/openai-agents-python/frontend-tools": [],
+  "/angular/openai-agents-python/webmcp": [
+   "/angular/openai-agents-python/frontend-tools"
+  ],
+  "/angular/openai-agents-python": [
+   "/angular/openai-agents-python/backend/copilot-runtime",
+   "/angular/openai-agents-python/inspector",
+   "/angular/openai-agents-python/intelligence/overview"
+  ],
+  "/angular/openai-agents-python/telemetry": [],
+  "/angular/openai-agents-python/custom-look-and-feel/slots": [],
+  "/angular/openai-agents-python/custom-look-and-feel/css": [],
+  "/angular/openai-agents-python/prebuilt-components": [],
+  "/angular/openai-agents-python/custom-look-and-feel/headless-ui": [],
+  "/angular/openai-agents-python/community-frameworks": [],
+  "/angular/openai-agents-python/multimodal-attachments": [],
+  "/angular/openai-agents-python/voice": [
+   "/angular/openai-agents-python/voice"
+  ],
+  "/angular/openai-agents-python/prebuilt-components/copilot-threads-drawer": [],
+  "/angular/openai-agents-python/generative-ui/tool-based": [],
+  "/angular/openai-agents-python/generative-ui/tool-rendering": [],
+  "/angular/openai-agents-python/headless-threads": [],
+  "/angular/openai-agents-python/generative-ui/a2ui": [],
+  "/angular/openai-agents-python/generative-ui/mcp-apps": [],
+  "/angular/openai-agents-python/shared-state/agent-readonly": [],
+  "/angular/openai-agents-python/shared-state": [],
+  "/angular/openai-agents-python/human-in-the-loop": [],
+  "/angular/openai-agents-python/generative-ui/open-generative-ui": [],
+  "/angular/openai-agents-python/human-in-the-loop/useInterrupt": [],
+  "/angular/openai-agents-python/human-in-the-loop/headless": [],
+  "/angular/openai-agents-python/vs-code-extension": [
+   "/angular/openai-agents-python/troubleshooting/event-inspector"
+  ],
+  "/angular/openai-agents-python/inspector": [
+   "/angular/openai-agents-python/troubleshooting/event-inspector"
+  ],
+  "/angular/openai-agents-python/runtime-server-adapter": [
+   "/angular/openai-agents-python/intelligence/quickstart"
+  ],
+  "/angular/openai-agents-python/auth": [
+   "/angular/openai-agents-python/backend/copilot-runtime",
+   "/angular/openai-agents-python/backend/runtime-endpoints",
+   "/angular/openai-agents-python/runtime-server-adapter"
+  ]
+ }
+}

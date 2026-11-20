@@ -1,0 +1,38 @@
+{
+ "clip": "OAP-angular-12-GenUiToolRendering",
+ "page": "gen-ui-tool-rendering",
+ "segments": [
+  {
+   "at": "doc",
+   "text": "Ok so this is the Tool Rendering page for OpenAI Agents with Angular, and I'm reporting a problem on this page."
+  },
+  {
+   "at": "evidence",
+   "text": "So this is the problem, the tool handler fetches slash api slash weather, and the page never gives that endpoint."
+  },
+  {
+   "at": "evidence#2",
+   "text": "And it promises the card shows the city and the tool result."
+  },
+  {
+   "at": "ide",
+   "text": "This is my project, I've implemented the exact code from the doc."
+  },
+  {
+   "at": "demo",
+   "text": "Moving on to the demo. I asked for the weather, it should show the weather on the card, but the result is just the app's HTML page."
+  },
+  {
+   "at": "notepad",
+   "text": "So basically, the handler calls an API the page never shows."
+  },
+  {
+   "at": "+",
+   "text": "So the tool never gets real weather back."
+  },
+  {
+   "at": "+",
+   "text": "That's the problem here, please have a look."
+  }
+ ]
+}

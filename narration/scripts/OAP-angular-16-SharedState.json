@@ -1,0 +1,34 @@
+{
+ "clip": "OAP-angular-16-SharedState",
+ "page": "shared-state",
+ "segments": [
+  {
+   "at": "doc",
+   "text": "Ok so this is the Shared State page for OpenAI Agents with Angular, and I'm reporting a problem on this page."
+  },
+  {
+   "at": "evidence",
+   "text": "So this is the problem, umm, it says after marking high priority, the agent answers high."
+  },
+  {
+   "at": "ide",
+   "text": "This is my project, I've implemented the exact code from the doc."
+  },
+  {
+   "at": "demo",
+   "text": "Moving on to the demo. After marking high priority I asked the agent, it should say high, but it can't tell what the priority is."
+  },
+  {
+   "at": "notepad",
+   "text": "So basically, the state is set in the browser, but nothing on the agent side reads it."
+  },
+  {
+   "at": "+",
+   "text": "The page only shows the Angular part, there's no backend step at all."
+  },
+  {
+   "at": "+",
+   "text": "So this needs a fix, kindly check it."
+  }
+ ]
+}

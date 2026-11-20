@@ -1,0 +1,42 @@
+{
+ "clip": "OAP-angular-01-Quickstart",
+ "page": "quickstart",
+ "segments": [
+  {
+   "at": "doc",
+   "text": "Ok so this is the Angular quickstart for OpenAI Agents, and I'm reporting a problem on this page."
+  },
+  {
+   "at": "evidence",
+   "text": "So this is the problem, umm, the agent server loops over AGENTS and uses a lifespan, but neither one is ever defined, and no agent is shown."
+  },
+  {
+   "at": "evidence#2",
+   "text": "And the runtime step is just this callout, the linked guide only has a Next.js route."
+  },
+  {
+   "at": "ide",
+   "text": "This is my project, I've implemented the exact code from the doc."
+  },
+  {
+   "at": "+",
+   "text": "This part, the agents registry and the runtime server, wasn't on the page, so I added it myself."
+  },
+  {
+   "at": "demo",
+   "text": "Moving on to the demo. On my own setup the chat answers, but following only the page, there's nothing you can actually run."
+  },
+  {
+   "at": "notepad",
+   "text": "So basically, the backend code is a fragment, no imports, no agent, no registry."
+  },
+  {
+   "at": "+",
+   "text": "And there's no runtime server for Angular, so you have to build it all yourself."
+  },
+  {
+   "at": "+",
+   "text": "So yeah, this is the issue, kindly fix it."
+  }
+ ]
+}

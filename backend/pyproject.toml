@@ -1,0 +1,13 @@
+[project]
+name = "agent-server"
+version = "0.1.0"
+requires-python = ">=3.10"
+# Doc (quickstart "Install the SDK" + Sub-agents step 1): pip install ag-ui-openai-agents openai-agents
+dependencies = [
+    "ag-ui-openai-agents",
+    "openai-agents",
+    # HARNESS: agent_server.py builds a FastAPI app and needs a server to run it; the page never installs either.
+    "fastapi",
+    "uvicorn",
+    "httpx",
+]

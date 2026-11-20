@@ -1,0 +1,31 @@
+# CSS Customization
+
+> Restyle the prebuilt Angular chat with scoped CSS on its stable classes.
+
+Restyle the prebuilt chat from [Prebuilt Components](/angular/prebuilt-components)
+with plain CSS. Import the package stylesheet first, as shown in
+[Add an inline chat](/angular/prebuilt-components#add-an-inline-chat).
+
+## Scope CSS changes [#scope-css-changes]
+
+The package stylesheet exposes stable chat classes. Put a scope class on your
+feature host so the change stays local.
+
+```css title="src/styles.css"
+.support-chat .copilotKitUserMessage {
+  color: white;
+  background: #2563eb;
+  border-radius: 0.75rem;
+}
+
+.support-chat .copilotKitAssistantMessage {
+  padding: 0.75rem;
+  color: #172554;
+  background: #eff6ff;
+  border-radius: 0.75rem;
+}
+```
+
+## Next steps [#next-steps]
+
+- [Slots](/angular/custom-look-and-feel/slots): replace a part of the chat with your own component.

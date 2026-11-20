@@ -1,0 +1,26 @@
+# MCP Apps
+
+> Render the interactive app resources an MCP server returns in Angular chat.
+
+Add `provideMCPApps()` from `@copilotkit/angular/mcp-apps` when an MCP server
+returns an interactive app resource.
+
+```ts title="src/app/app.config.ts"
+import { ApplicationConfig } from "@angular/core";
+import { provideCopilotKit } from "@copilotkit/angular";
+import { provideMCPApps } from "@copilotkit/angular/mcp-apps";
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideCopilotKit({ runtimeUrl: "/api/copilotkit" }),
+    provideMCPApps(),
+  ],
+};
+```
+
+MCP resource and tool requests travel through the selected AG-UI agent. The
+browser provider does not take a server URL.
+
+## Next steps [#next-steps]
+
+- [Other generative UI paths](/angular/generative-ui)

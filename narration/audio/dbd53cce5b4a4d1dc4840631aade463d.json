@@ -1,0 +1,9 @@
+{
+ "text": "Moving on to the demo. It should show a mic button in the chat, but there's no mic at all, the runtime says transcription is off.",
+ "model": "s2.1-pro-free",
+ "refSha256": "2c9d0ecf4608feacc07c88e869cd4dec601481306a939b7be92fc1bff521a727",
+ "duration": 8.731,
+ "file": "dbd53cce5b4a4d1dc4840631aade463d.mp3",
+ "clip": "OAP-angular-04-Voice",
+ "at": "demo"
+}

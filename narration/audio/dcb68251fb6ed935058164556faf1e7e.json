@@ -1,0 +1,9 @@
+{
+ "text": "Moving on to the demo. It should render a small dashboard filter in a sandbox, but the agent just writes the buttons as plain HTML in its message.",
+ "model": "s2.1-pro-free",
+ "refSha256": "2c9d0ecf4608feacc07c88e869cd4dec601481306a939b7be92fc1bff521a727",
+ "duration": 10.356,
+ "file": "dcb68251fb6ed935058164556faf1e7e.mp3",
+ "clip": "OAP-angular-15-OpenGenerativeUi",
+ "at": "demo"
+}

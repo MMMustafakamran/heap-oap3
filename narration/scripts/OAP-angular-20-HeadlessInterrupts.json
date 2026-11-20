@@ -1,0 +1,38 @@
+{
+ "clip": "OAP-angular-20-HeadlessInterrupts",
+ "page": "headless-interrupts",
+ "segments": [
+  {
+   "at": "doc",
+   "text": "Ok so this is the Headless Interrupts page for OpenAI Agents with Angular, and I'm reporting a problem on this page."
+  },
+  {
+   "at": "evidence",
+   "text": "So this is the problem, it says the backend agent emits an interrupt, but no such backend is shown."
+  },
+  {
+   "at": "evidence#2",
+   "text": "And it uses a ticketing agent that's never registered anywhere."
+  },
+  {
+   "at": "ide",
+   "text": "This is my project, I've implemented the exact code from the doc."
+  },
+  {
+   "at": "+",
+   "text": "This part, registering the ticketing agent, wasn't on the page, so I added it myself."
+  },
+  {
+   "at": "demo",
+   "text": "Moving on to the demo. I asked it to ship the ticket, it should show an approval, but the agent just replies, no approval shows up."
+  },
+  {
+   "at": "notepad",
+   "text": "So basically, there's no ticketing agent and no backend that interrupts."
+  },
+  {
+   "at": "+",
+   "text": "So yeah, kindly check this and fix it."
+  }
+ ]
+}

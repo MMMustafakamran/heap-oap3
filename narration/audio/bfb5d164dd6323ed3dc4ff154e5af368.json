@@ -1,0 +1,9 @@
+{
+ "text": "So basically, the state is set in the browser, but nothing on the agent side reads it.",
+ "model": "s2.1-pro-free",
+ "refSha256": "2c9d0ecf4608feacc07c88e869cd4dec601481306a939b7be92fc1bff521a727",
+ "duration": 6.873,
+ "file": "bfb5d164dd6323ed3dc4ff154e5af368.mp3",
+ "clip": "OAP-angular-16-SharedState",
+ "at": "notepad"
+}

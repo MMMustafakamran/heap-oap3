@@ -1,0 +1,34 @@
+{
+ "clip": "OAP-angular-04-Voice",
+ "page": "voice",
+ "segments": [
+  {
+   "at": "doc",
+   "text": "Ok so this is the Voice page for OpenAI Agents with Angular, and I'm reporting a problem on this page."
+  },
+  {
+   "at": "evidence",
+   "text": "So this is the problem, umm, this voice backend setup link just points back to this same page, and that section doesn't exist."
+  },
+  {
+   "at": "ide",
+   "text": "This is my project, I've implemented the exact code from the doc."
+  },
+  {
+   "at": "demo",
+   "text": "Moving on to the demo. It should show a mic button in the chat, but there's no mic at all, the runtime says transcription is off."
+  },
+  {
+   "at": "notepad",
+   "text": "So basically, the page says add a transcription route, but it never shows one."
+  },
+  {
+   "at": "+",
+   "text": "The link goes nowhere, so you can't turn voice on from this page."
+  },
+  {
+   "at": "+",
+   "text": "So kindly look into it."
+  }
+ ]
+}

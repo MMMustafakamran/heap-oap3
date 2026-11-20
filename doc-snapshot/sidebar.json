@@ -1,0 +1,201 @@
+{
+ "root": "angular/openai-agents-python",
+ "savedAt": "2026-11-20",
+ "pages": [
+  {
+   "url": "/angular/openai-agents-python",
+   "name": "Quickstart",
+   "group": "Search⌘K"
+  },
+  {
+   "url": "/angular/openai-agents-python/build-with-agents",
+   "name": "Build with agents",
+   "group": "Search⌘K"
+  },
+  {
+   "url": "/angular/openai-agents-python/intelligence/overview",
+   "name": "Intelligence",
+   "group": "Search⌘K"
+  },
+  {
+   "url": "/angular/openai-agents-python/frontend-tools",
+   "name": "Frontend Tools",
+   "group": "Basics > Threads"
+  },
+  {
+   "url": "/angular/openai-agents-python/generative-ui",
+   "name": "Overview",
+   "group": "Generative UI"
+  },
+  {
+   "url": "/angular/openai-agents-python/webmcp",
+   "name": "WebMCP",
+   "group": "Interactivity > Human-in-the-loop"
+  },
+  {
+   "url": "/angular/openai-agents-python/multi-agent/subagents",
+   "name": "Sub-agents",
+   "group": "Agent capabilities"
+  },
+  {
+   "url": "/angular/openai-agents-python/telemetry",
+   "name": "Open-source telemetry",
+   "group": "Other > Troubleshooting"
+  },
+  {
+   "url": "/angular/openai-agents-python/community-frameworks",
+   "name": "Community frameworks",
+   "group": "Other > Troubleshooting"
+  },
+  {
+   "url": "/angular/openai-agents-python/prebuilt-components",
+   "name": "Prebuilt Components",
+   "group": "Basics > Chat"
+  },
+  {
+   "url": "/angular/openai-agents-python/custom-look-and-feel/css",
+   "name": "CSS Customization",
+   "group": "Basics > Custom Look and Feel"
+  },
+  {
+   "url": "/angular/openai-agents-python/custom-look-and-feel/slots",
+   "name": "Slots (Subcomponents)",
+   "group": "Basics > Custom Look and Feel"
+  },
+  {
+   "url": "/angular/openai-agents-python/custom-look-and-feel/headless-ui",
+   "name": "Headless UI",
+   "group": "Basics > Custom Look and Feel"
+  },
+  {
+   "url": "/angular/openai-agents-python/multimodal-attachments",
+   "name": "Multimodal Attachments",
+   "group": "Basics > Custom Look and Feel"
+  },
+  {
+   "url": "/angular/openai-agents-python/voice",
+   "name": "Voice",
+   "group": "Basics > Custom Look and Feel"
+  },
+  {
+   "url": "/angular/openai-agents-python/generative-ui/tool-based",
+   "name": "Components as Tools",
+   "group": "Generative UI > Controlled"
+  },
+  {
+   "url": "/angular/openai-agents-python/generative-ui/tool-rendering",
+   "name": "Tool Call Rendering",
+   "group": "Generative UI > Controlled"
+  },
+  {
+   "url": "/angular/openai-agents-python/prebuilt-components/copilot-threads-drawer",
+   "name": "Threads Drawer",
+   "group": "Basics > Threads"
+  },
+  {
+   "url": "/angular/openai-agents-python/headless-threads",
+   "name": "Headless Threads",
+   "group": "Basics > Threads"
+  },
+  {
+   "url": "/angular/openai-agents-python/generative-ui/a2ui",
+   "name": "A2UI",
+   "group": "Generative UI > Declarative"
+  },
+  {
+   "url": "/angular/openai-agents-python/generative-ui/mcp-apps",
+   "name": "MCP Apps",
+   "group": "Generative UI > Open-ended"
+  },
+  {
+   "url": "/angular/openai-agents-python/generative-ui/open-generative-ui",
+   "name": "Open Generative UI",
+   "group": "Generative UI > Open-ended"
+  },
+  {
+   "url": "/angular/openai-agents-python/shared-state",
+   "name": "Shared State",
+   "group": "Interactivity > Shared state"
+  },
+  {
+   "url": "/angular/openai-agents-python/shared-state/agent-readonly",
+   "name": "Agent Read-Only Context",
+   "group": "Interactivity > Shared state"
+  },
+  {
+   "url": "/angular/openai-agents-python/human-in-the-loop",
+   "name": "HITL Overview",
+   "group": "Interactivity > Human-in-the-loop"
+  },
+  {
+   "url": "/angular/openai-agents-python/human-in-the-loop/useInterrupt",
+   "name": "Pausing the Agent for Input",
+   "group": "Interactivity > Human-in-the-loop"
+  },
+  {
+   "url": "/angular/openai-agents-python/human-in-the-loop/headless",
+   "name": "Headless Interrupts",
+   "group": "Interactivity > Human-in-the-loop"
+  },
+  {
+   "url": "/angular/openai-agents-python/inspector",
+   "name": "Inspector",
+   "group": "Backend > Debugging"
+  },
+  {
+   "url": "/angular/openai-agents-python/vs-code-extension",
+   "name": "VS Code Extension",
+   "group": "Backend > Debugging"
+  },
+  {
+   "url": "/angular/openai-agents-python/backend/copilot-runtime",
+   "name": "Copilot Runtime",
+   "group": "Backend > Runtime"
+  },
+  {
+   "url": "/angular/openai-agents-python/backend/runtime-endpoints",
+   "name": "Runtime HTTP endpoints",
+   "group": "Backend > Runtime"
+  },
+  {
+   "url": "/angular/openai-agents-python/backend/custom-agent",
+   "name": "Use any model router",
+   "group": "Backend > Runtime"
+  },
+  {
+   "url": "/angular/openai-agents-python/backend/custom-ag-ui-agent",
+   "name": "Write your own AG-UI agent",
+   "group": "Backend > Runtime"
+  },
+  {
+   "url": "/angular/openai-agents-python/backend/agent-runner",
+   "name": "AgentRunner and persistence",
+   "group": "Backend > Runtime"
+  },
+  {
+   "url": "/angular/openai-agents-python/backend/message-history",
+   "name": "Message history",
+   "group": "Backend > Runtime"
+  },
+  {
+   "url": "/angular/openai-agents-python/backend/self-managed-agents",
+   "name": "Self-managed agents",
+   "group": "Backend > Runtime"
+  },
+  {
+   "url": "/angular/openai-agents-python/backend/ag-ui",
+   "name": "Connect AG-UI agents",
+   "group": "Backend > Runtime"
+  },
+  {
+   "url": "/angular/openai-agents-python/runtime-server-adapter",
+   "name": "Deploy to any runtime",
+   "group": "Backend > Runtime"
+  },
+  {
+   "url": "/angular/openai-agents-python/auth",
+   "name": "Authentication",
+   "group": "Backend > Runtime"
+  }
+ ]
+}

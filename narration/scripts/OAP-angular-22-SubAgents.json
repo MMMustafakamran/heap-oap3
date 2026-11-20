@@ -1,0 +1,42 @@
+{
+ "clip": "OAP-angular-22-SubAgents",
+ "page": "multi-agent-subagents",
+ "segments": [
+  {
+   "at": "doc",
+   "text": "Ok so this is the Sub-agents page for OpenAI Agents with Angular, and I'm reporting a problem on this page."
+  },
+  {
+   "at": "evidence",
+   "text": "So this is the problem, umm, the Angular code is a fragment, read delegations and the renderer config are never defined."
+  },
+  {
+   "at": "evidence#2",
+   "text": "And the full code under the Code tab is React, not Angular."
+  },
+  {
+   "at": "ide",
+   "text": "This is my project, I've implemented the exact code from the doc."
+  },
+  {
+   "at": "+",
+   "text": "This part, the delegation log and the common model settings, wasn't on the page, so I added it myself."
+  },
+  {
+   "at": "demo",
+   "text": "Moving on to the demo. With my own log the sub-agents show up, but with just the page's Angular code, there's no delegation log you can build."
+  },
+  {
+   "at": "notepad",
+   "text": "So basically, the agent code is fine, but the Angular side is incomplete."
+  },
+  {
+   "at": "+",
+   "text": "So you have to write the delegation log yourself."
+  },
+  {
+   "at": "+",
+   "text": "Alright, that's the issue, kindly sort it out."
+  }
+ ]
+}

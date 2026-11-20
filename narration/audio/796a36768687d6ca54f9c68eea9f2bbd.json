@@ -1,0 +1,9 @@
+{
+ "text": "Moving on to the demo. I asked for the weather, it should show the weather on the card, but the result is just the app's HTML page.",
+ "model": "s2.1-pro-free",
+ "refSha256": "2c9d0ecf4608feacc07c88e869cd4dec601481306a939b7be92fc1bff521a727",
+ "duration": 10.031,
+ "file": "796a36768687d6ca54f9c68eea9f2bbd.mp3",
+ "clip": "OAP-angular-12-GenUiToolRendering",
+ "at": "demo"
+}
