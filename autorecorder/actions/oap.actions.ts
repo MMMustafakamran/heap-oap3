@@ -436,27 +436,55 @@ export const runAttachmentsAction: PageActionHandler = async (page, config, root
   await glideTo(page, page.locator('copilot-chat-assistant-message').last(), 2500);
 };
 
-const MIC_SELECTOR = ['transcri', 'voice', 'microphone', 'dictat', 'record', 'audio']
-  .map((k) => `copilot-chat-input button[aria-label*="${k}" i]`)
-  .join(', ');
-
-/** Voice: the page promises a mic button in the composer; there is none without a transcription service the page never shows. */
-export const runVoicePageAction: PageActionHandler = async (page, config, _root, ctx) => {
-  let hasMic = false;
-  try {
-    const msgCount = await sendPrompt(page, config.prompt, { timeoutMs: 15000 });
-    await settle(page, msgCount, ctx);
-    hasMic = (await page.locator(MIC_SELECTOR).count()) > 0;
-    await glideTo(page, page.locator('copilot-chat-input, textarea').first(), 2500);
-    if (!hasMic) mark('error', 'no mic button in the composer');
-  } finally {
-    await writeFinding(page, config.id, config);
+/**
+ * Voice: with the backend from the generic /voice page (linked as "Voice backend setup"; ported in
+ * frontend/server.ts), the composer shows the mic. HARNESS: no real mic in a recorded browser, so
+ * getUserMedia is fed the sample phrase ("What is the weather in Tokyo?", frontend/public/voice-sample.wav)
+ * and the audio really goes through the runtime's /transcribe to OpenAI.
+ */
+export const runVoicePageAction: PageActionHandler = async (page, _config, _root, ctx) => {
+  const mic = page.locator('copilot-chat-input button[aria-label="Transcribe"]').first();
+  if (!(await mic.isVisible().catch(() => false))) {
+    mark('error', 'no mic button in the composer');
+    ctx.fail('No mic (Transcribe) button in the composer: runtime /info does not report audioFileTranscriptionEnabled: true.');
+    return;
   }
-  if (!hasMic) {
-    ctx.fail(
-      'No mic button in the composer: /info reports audioFileTranscriptionEnabled: false. The page links "Voice backend setup" to its own #backend anchor, which does not exist, and shows no transcriptionService code.',
-    );
+  await page.evaluate(() => {
+    navigator.mediaDevices.getUserMedia = async () => {
+      const ac = new AudioContext();
+      await ac.resume();
+      const buf = await ac.decodeAudioData(await (await fetch('/voice-sample.wav')).arrayBuffer());
+      const src = ac.createBufferSource();
+      src.buffer = buf;
+      const dest = ac.createMediaStreamDestination();
+      src.connect(dest);
+      src.start();
+      return dest.stream;
+    };
+  });
+  await glideClick(page, mic);
+  mark('action', 'recording the sample phrase');
+  await sleep(3500);
+  await glideClick(page, page.locator('copilot-chat-input button[aria-label="Finish"]').first());
+  const textarea = page.locator('copilot-chat-input textarea').first();
+  const got = await page
+    .waitForFunction(() => /tokyo/i.test((document.querySelector('copilot-chat-input textarea') as HTMLTextAreaElement | null)?.value ?? ''), undefined, { timeout: 30000 })
+    .then(() => true)
+    .catch(() => false);
+  const text = await textarea.inputValue().catch(() => '');
+  ctx.warn(`Transcript in the composer: "${text}"`);
+  if (!got) {
+    mark('error', 'no transcript in the composer');
+    ctx.fail(`The transcript never reached the composer (textarea: "${text}").`);
+    return;
   }
+  await glideTo(page, textarea, 2500);
+  await sleep(1500);
+  const msgCount = await page.locator('copilot-chat-assistant-message').count();
+  await glideClick(page, page.locator('copilot-chat-input button[aria-label="Send message"]').first());
+  await settle(page, msgCount, ctx);
+  await glideTo(page, page.locator('copilot-chat-assistant-message').last(), 2500);
+  await sleep(2000);
 };
 
 /** CSS customization: user bubble blue (#2563eb), assistant bubble pale blue (#eff6ff). */
@@ -517,16 +545,26 @@ export const runHeadlessUiAction: PageActionHandler = async (page, config, _root
 
 /** Threads Drawer: the drawer lists the conversation next to the chat. */
 export const runThreadsDrawerAction: PageActionHandler = async (page, config, _root, ctx) => {
+  // The drawer is a Lit element (<copilotkit-threads-drawer>): its list lives in a shadow root, which
+  // innerText on the Angular host never reads (the old check called a working drawer "empty").
+  const drawerText = () =>
+    page.evaluate(() => (document.querySelector('copilotkit-threads-drawer')?.shadowRoot?.textContent ?? '').replace(/\s+/g, ' ').trim());
+  const before = await drawerText();
   const msgCount = await sendPrompt(page, config.prompt, { timeoutMs: 15000 });
   await settle(page, msgCount, ctx);
-  await sleep(3000);
-  const drawer = page.locator('copilot-threads-drawer').first();
-  const text = (await drawer.innerText().catch(() => '')).trim();
-  await glideTo(page, drawer, 2500);
-  ctx.warn(`Drawer text: ${text.slice(0, 300).replace(/\s+/g, ' ')}`);
-  if (!text) mark('error', 'drawer renders empty: no list, no locked state');
-  await writeFinding(page, config.id, config);
-  if (!text) ctx.fail('CopilotThreadsDrawer renders an empty panel: no thread list and no locked state (runtime /info: threadEndpoints.list false).');
+  await sleep(6000);
+  const text = await drawerText();
+  await glideTo(page, page.locator('copilot-threads-drawer').first(), 2500);
+  ctx.warn(`Drawer text: ${text.slice(0, 300)}`);
+  const reply = (await lastReply(page)).trim();
+  if (!reply) ctx.fail('No assistant reply in the chat (the run did not complete).');
+  if (text === before) ctx.fail('The drawer list did not change after the chat.');
+  const listed = /Recent Conversations/i.test(text) && text.replace(/.*Recent Conversations/i, '').trim().length > 0;
+  if (!listed) {
+    mark('error', 'drawer lists no conversation');
+    ctx.fail('CopilotThreadsDrawer lists no conversation after a chat on agent "support".');
+  }
+  await sleep(2000);
 };
 
 /** Headless Threads: the injectThreads list shows the conversation. */
@@ -698,26 +736,4 @@ export const runSubagentsPageAction: PageActionHandler = async (page, config, ro
   await finish(page, config, ctx, got ? undefined : 'No delegation was logged: the supervisor never ran a sub-agent.');
 };
 
-Object.assign(FINDING_EVIDENCE, {
-  'threads-drawer': [
-    { text: 'shows its locked state when that feature is unavailable', caption: 'Drawer renders empty: no list, no locked state' },
-  ],
-  voice: [
-    { text: 'Voice backend setup', caption: 'Links to #backend on this same page, which does not exist; no transcriptionService code anywhere' },
-  ],
-} satisfies Record<string, DocEvidence[]>);
 
-Object.assign(FINDING_NOTES, {
-  'threads-drawer': [
-    'page says the drawer lists and switches conversations or shows its locked state when threads isnt available',
-    'chatted on agent support,drawer stays an empty panel,no list no locked state',
-    'same runtime with the intelligence key, headless threads lists the thread fine',
-    'page never says what else the drawer needs,had to add the intelligence runtime myself',
-  ].join('\n'),
-  voice: [
-    'page says the mic button shows in the composer once the runtime has a transcription service',
-    'no mic shows up, info says audiofiletranscriptionenabled false',
-    'the voice backend setup link just points back to this same page at #backend and theres no such section',
-    'no transcriptionservice code anywhere so u cant set it up from the page',
-  ].join('\n'),
-});

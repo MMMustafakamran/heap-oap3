@@ -10,17 +10,6 @@ Stack: `@copilotkit/angular` 0.6.0, `@copilotkit/runtime` 1.85.0, `@ag-ui/client
 - **Result:** the backend as published fails at import (`NameError`); no working Angular app can be built from the page without writing the agent, registry, lifespan and runtime yourself.
 - **Confirmed by harness:** a HARNESS `Agent` wrapped in `OpenAIAgentsAgent` as `default`, `AGENTS`, `lifespan` (the doc's `configure_sdk`/`close_client`), the missing imports/constants in `backend/_common.py`, and `frontend/server.ts` (`CopilotRuntime` + `createCopilotNodeListener` + `HttpAgent` to `http://localhost:8291/default`) make the chat answer (probe 2026-11-20: "Yes, I'm connected! Here's a quick fun fact about kites…").
 
-### [Voice](https://docs.copilotkit.ai/angular/openai-agents-python/voice)
-**#2 Voice can't be set up: the transcription backend is never shown.**
-- **Doc:** "Follow the Voice backend setup to add a dedicated Runtime route and transcription service."
-- **Result:** the link goes to `voice#backend` on the same page, a section that doesn't exist; no `transcriptionService` code anywhere. `/info` reports `"audioFileTranscriptionEnabled":false` and the composer has no mic button.
-
-### [Threads Drawer](https://docs.copilotkit.ai/angular/openai-agents-python/prebuilt-components/copilot-threads-drawer)
-**#3 The threads drawer renders empty.**
-- **Doc:** "The drawer reads the platform's `threads` license feature and shows its locked state when that feature is unavailable." and `<copilot-threads-drawer agentId="support" [limit]="20" />`.
-- **Result:** after a chat on agent `support`, the drawer is an empty panel: no thread list and no locked state (CI runs 44710636115, 44711977267). With the same Intelligence runtime and a valid key, Headless Threads' `injectThreads` lists the thread, so the key works. The page never says what else the drawer needs.
-- **Confirmed by harness:** HARNESS `/threads` runtime with `CopilotKitIntelligence` (frontend/server.ts), selected from the demo host with `updateRuntime`.
-
 ### [Tool Call Rendering](https://docs.copilotkit.ai/angular/openai-agents-python/generative-ui/tool-rendering)
 **#5 The weather tool fetches an endpoint the page never provides.**
 - **Doc:** ``fetch(`/api/weather?city=${encodeURIComponent(city)}`)`` and "The weather card shows \"Loading weather for Paris\", then the city and the tool result."
@@ -65,6 +54,8 @@ Stack: `@copilotkit/angular` 0.6.0, `@copilotkit/runtime` 1.85.0, `@ag-ui/client
 
 ## Minor notes
 
+- Voice (was #2): the "Voice backend setup" link opens the generic /voice page, whose backend is a Next.js route only; `@copilotkit/voice` has no install step, and its `openai` 5 peer-requires zod 3 (ERESOLVE next to zod 4, needs `--legacy-peer-deps`).
+- Threads Drawer (was #3): works (lists threads) on an Intelligence runtime, which the page never mentions; the sample template has no layout, so the chat renders below the drawer.
 - Quickstart: `HttpAgent` comes from `@ag-ui/client`, which the install step never adds.
 - Prebuilt Components: the page's `AppComponent` mounts `copilot-popup` and `copilot-sidebar` together; both launchers sit on the same spot, so "Click the popup launcher button" opens the sidebar.
 - Prebuilt Components, Headless Threads: `agentId="support"` is used without saying it must be registered in the runtime.

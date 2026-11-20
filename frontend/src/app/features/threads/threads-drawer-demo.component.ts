@@ -7,7 +7,9 @@ import { ConversationsComponent } from './conversations.component';
 @Component({
   selector: 'app-threads-drawer-demo',
   imports: [ConversationsComponent],
-  template: `<div style="display: flex; height: 100%"><app-conversations /></div>`,
+  // HARNESS: the page's template has no layout; the host is a flex row so the chat sits beside the drawer, not below the fold
+  template: `<div class="drawer-host" style="display: flex; height: 100%"><app-conversations style="display: flex; flex: 1; min-width: 0; height: 100%" /></div>`,
+  styles: [`:host ::ng-deep .drawer-host copilot-chat { flex: 1; min-width: 0; }`],
 })
 export class ThreadsDrawerDemoComponent {
   constructor() {

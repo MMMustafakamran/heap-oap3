@@ -75,7 +75,7 @@ export const PAGES = definePages([
     route: 'voice',
     ideFile: 'frontend/src/app/features/media/voice-chat.component.ts',
     startLine: 1,
-    endLine: 35,
+    endLine: 39,
     prompt: 'Hi, can you hear me? Reply in one short sentence.',
     waitAfterPromptMs: 3000,
   },

@@ -183,20 +183,18 @@
       "child": true,
       "docPath": "voice",
       "reachable": "sidebar",
-      "status": "❌",
-      "findings": [
-        2
-      ],
+      "status": "✅",
+      "findings": [],
       "notes": [
-        "Issue: the \"Voice backend setup\" link points back to this page (#backend doesn't exist) and no transcription service code is shown, so no mic button ever shows."
+        "Note: backend setup is on the generic /voice page (Next.js only)."
       ],
       "block": null,
       "links": [
         {
-          "text": "Issue",
+          "text": "Voice - Angular",
           "clip": "OAP-angular-04-Voice",
           "loom": "https://www.loom.com/share/56b98a5472c349b4ad23dc8c82cddd8d",
-          "narration": "narration/scripts/OAP-angular-04-Voice.json",
+          "narration": null,
           "filmed": "2026-11-20"
         }
       ],
@@ -205,7 +203,7 @@
         "approvedAt": null,
         "by": null
       },
-      "probe": "CI run 44708218250"
+      "probe": "local probe 2026-11-20 (mic shown, transcript reached composer)"
     },
     {
       "id": "clf-css",
@@ -299,20 +297,18 @@
       "child": true,
       "docPath": "prebuilt-components/copilot-threads-drawer",
       "reachable": "sidebar",
-      "status": "❌",
-      "findings": [
-        3
-      ],
+      "status": "✅",
+      "findings": [],
       "notes": [
-        "Issue: the drawer renders as an empty panel (no thread list, no locked state) after a chat on agent \"support\", 2/2 CI runs, while Headless Threads lists the thread on the same Intelligence runtime; the page never says what else the drawer needs."
+        "Note: drawer lists threads; needs an Intelligence runtime the page never mentions."
       ],
       "block": null,
       "links": [
         {
-          "text": "Issue",
+          "text": "Threads Drawer - Angular",
           "clip": "OAP-angular-08-ThreadsDrawer",
           "loom": "https://www.loom.com/share/9f56024994e2428f89645bec895ca544",
-          "narration": "narration/scripts/OAP-angular-08-ThreadsDrawer.json",
+          "narration": null,
           "filmed": "2026-11-20"
         }
       ],
@@ -321,7 +317,7 @@
         "approvedAt": null,
         "by": null
       },
-      "probe": "CI runs 44710636115 + 44711977267 (2/2 fail, valid key)"
+      "probe": "local probe 2026-11-20 (drawer lists threads; old ❌ was a recorder shadow-DOM misread)"
     },
     {
       "id": "headless-threads",

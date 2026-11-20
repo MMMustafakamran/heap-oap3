@@ -9,10 +9,11 @@
  */
 // quickstart : copilot runtime
 import { createServer } from "node:http";
-import { CopilotKitIntelligence, CopilotRuntime } from "@copilotkit/runtime/v2";
+import { CopilotKitIntelligence, CopilotRuntime, InMemoryAgentRunner } from "@copilotkit/runtime/v2";
 import { createCopilotNodeListener } from "@copilotkit/runtime/v2/node";
 import { HttpAgent } from "@ag-ui/client";
 import { authApp } from "./auth-runtime"; // HARNESS: Authentication guide hook, served under /auth
+import { createTranscriptionService } from "./lib/transcription-service"; // HARNESS: doc path src/lib/transcription-service.ts (generic /voice page); kept outside the Angular src tree
 
 const agentUrl =
   process.env["AGENT_URL"] ?? "http://localhost:8291/default"; // HARNESS: OpenAI Agents agent server, port 8291 (doc: 8000)
@@ -60,11 +61,32 @@ const threadsListener = process.env["CPK_INTELLIGENCE_API_KEY"]
   : null;
 if (!threadsListener) console.warn("CPK_INTELLIGENCE_API_KEY not set: /threads runtime not mounted");
 
+// HARNESS: Voice page backend, from the generic /voice page's Backend section (its only server is a
+// Next.js route `app/api/copilotkit-voice/[[...slug]]/route.ts`; ported to this Node listener under /voice).
+// The doc's `createBuiltInAgent()` demo helper is replaced by the quickstart agent ("replace them with your own agent").
+try { process.loadEnvFile("../backend/.env"); } catch {} // HARNESS: OpenAI key lives in backend/.env
+process.env["OPENAI_TRANSCRIPTION_API_KEY"] ??= process.env["OPENAI_API_KEY"]; // HARNESS: doc's key name, same OpenAI key
+const voiceRuntime = new CopilotRuntime({
+  agents: { default: new HttpAgent({ url: agentUrl }) },
+  runner: new InMemoryAgentRunner(),
+  transcriptionService: createTranscriptionService(),
+});
+const voiceListener = createCopilotNodeListener({
+  runtime: voiceRuntime,
+  basePath: "/api/copilotkit-voice",
+  cors: true,
+});
+
 // HARNESS: /auth/* goes to the Authentication guide's hooked runtime (auth-runtime.ts).
 createServer((req, res) => {
   if (threadsListener && req.url?.startsWith("/threads/")) {
     req.url = req.url.slice("/threads".length);
     threadsListener(req, res);
+    return;
+  }
+  if (req.url?.startsWith("/voice/")) {
+    req.url = req.url.slice("/voice".length);
+    voiceListener(req, res);
     return;
   }
   if (req.url?.startsWith("/auth/")) {
