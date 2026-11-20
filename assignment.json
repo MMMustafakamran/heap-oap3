@@ -115,7 +115,7 @@
     "approvedAt": null,
     "by": null
    },
-   "probe": "pending (CI mode=probe)"
+   "probe": "CI run 44708218250"
   },
   {
    "id": "prebuilt-components",
@@ -145,7 +145,7 @@
     "approvedAt": null,
     "by": null
    },
-   "probe": "pending (CI mode=probe)"
+   "probe": "CI run 44708218250"
   },
   {
    "id": "multimodal-attachments",
@@ -173,7 +173,7 @@
     "approvedAt": null,
     "by": null
    },
-   "probe": "pending (CI mode=probe)"
+   "probe": "CI run 44708218250"
   },
   {
    "id": "voice",
@@ -205,7 +205,7 @@
     "approvedAt": null,
     "by": null
    },
-   "probe": "pending (CI mode=probe)"
+   "probe": "CI run 44708218250"
   },
   {
    "id": "clf-css",
@@ -233,7 +233,7 @@
     "approvedAt": null,
     "by": null
    },
-   "probe": "pending (CI mode=probe)"
+   "probe": "CI run 44708218250"
   },
   {
    "id": "clf-slots",
@@ -261,7 +261,7 @@
     "approvedAt": null,
     "by": null
    },
-   "probe": "pending (CI mode=probe)"
+   "probe": "CI run 44708218250"
   },
   {
    "id": "clf-headless-ui",
@@ -289,7 +289,7 @@
     "approvedAt": null,
     "by": null
    },
-   "probe": "pending (CI mode=probe)"
+   "probe": "CI run 44708218250"
   },
   {
    "id": "threads-drawer",
@@ -299,10 +299,12 @@
    "child": true,
    "docPath": "prebuilt-components/copilot-threads-drawer",
    "reachable": "sidebar",
-   "status": "✅",
-   "findings": [],
+   "status": "❌",
+   "findings": [
+    3
+   ],
    "notes": [
-    "Note: the page never says the drawer needs a CopilotKit Intelligence runtime; the harness mounts one (pending probe with a valid key)."
+    "Issue: the drawer renders as an empty panel (no thread list, no locked state) after a chat on agent \"support\", 2/2 CI runs, while Headless Threads lists the thread on the same Intelligence runtime; the page never says what else the drawer needs."
    ],
    "block": null,
    "links": [
@@ -310,7 +312,7 @@
      "text": "Issue",
      "clip": "OAP-angular-08-ThreadsDrawer",
      "loom": null,
-     "narration": null,
+     "narration": "narration/scripts/OAP-angular-08-ThreadsDrawer.json",
      "filmed": null
     }
    ],
@@ -319,7 +321,7 @@
     "approvedAt": null,
     "by": null
    },
-   "probe": "pending (CI mode=probe)"
+   "probe": "CI runs 44710636115 + 44711977267 (2/2 fail, valid key)"
   },
   {
    "id": "headless-threads",
@@ -332,12 +334,12 @@
    "status": "✅",
    "findings": [],
    "notes": [
-    "Note: selectedThreadId is never defined and the page never says the list needs a CopilotKit Intelligence runtime (pending probe with a valid key)."
+    "Note: selectedThreadId is never defined and the page never says the list needs a CopilotKit Intelligence runtime."
    ],
    "block": null,
    "links": [
     {
-     "text": "Issue",
+     "text": "Headless Threads - JS",
      "clip": "OAP-angular-09-HeadlessThreads",
      "loom": null,
      "narration": null,
@@ -349,7 +351,7 @@
     "approvedAt": null,
     "by": null
    },
-   "probe": "pending (CI mode=probe)"
+   "probe": "CI run 44710636115 (pass, valid key)"
   },
   {
    "id": "frontend-tools",
@@ -379,7 +381,7 @@
     "approvedAt": null,
     "by": null
    },
-   "probe": "pending (CI mode=probe)"
+   "probe": "CI run 44708218250"
   },
   {
    "id": "gen-ui-tool-based",
@@ -407,7 +409,7 @@
     "approvedAt": null,
     "by": null
    },
-   "probe": "pending (CI mode=probe)"
+   "probe": "CI run 44708218250"
   },
   {
    "id": "gen-ui-tool-rendering",
@@ -439,7 +441,7 @@
     "approvedAt": null,
     "by": null
    },
-   "probe": "pending (CI mode=probe)"
+   "probe": "CI run 44708218250"
   },
   {
    "id": "a2ui",
@@ -471,7 +473,7 @@
     "approvedAt": null,
     "by": null
    },
-   "probe": "pending (CI mode=probe)"
+   "probe": "CI run 44708218250"
   },
   {
    "id": "mcp-apps",
@@ -503,7 +505,7 @@
     "approvedAt": null,
     "by": null
    },
-   "probe": "pending (CI mode=probe)"
+   "probe": "CI run 44708218250"
   },
   {
    "id": "open-generative-ui",
@@ -535,7 +537,7 @@
     "approvedAt": null,
     "by": null
    },
-   "probe": "pending (CI mode=probe)"
+   "probe": "CI run 44708218250"
   },
   {
    "id": "shared-state",
@@ -567,7 +569,7 @@
     "approvedAt": null,
     "by": null
    },
-   "probe": "pending (CI mode=probe)"
+   "probe": "CI runs 44708218250 + 44711977267 (2/2 fail)"
   },
   {
    "id": "agent-readonly",
@@ -580,12 +582,12 @@
    "status": "✅",
    "findings": [],
    "notes": [
-    "Note: expected to work: the OpenAI Agents adapter appends connectAgentContext entries to the instructions (pending probe)."
+    "Note: expected to work: the OpenAI Agents adapter appends connectAgentContext entries to the instructions."
    ],
    "block": null,
    "links": [
     {
-     "text": "Issue",
+     "text": "Agent Read-Only Context - JS",
      "clip": "OAP-angular-17-AgentReadonly",
      "loom": null,
      "narration": null,
@@ -597,7 +599,7 @@
     "approvedAt": null,
     "by": null
    },
-   "probe": "pending (CI mode=probe)"
+   "probe": "CI run 44708218250"
   },
   {
    "id": "human-in-the-loop",
@@ -627,7 +629,7 @@
     "approvedAt": null,
     "by": null
    },
-   "probe": "pending (CI mode=probe)"
+   "probe": "CI run 44708218250"
   },
   {
    "id": "use-interrupt",
@@ -659,7 +661,7 @@
     "approvedAt": null,
     "by": null
    },
-   "probe": "pending (CI mode=probe)"
+   "probe": "CI run 44708218250"
   },
   {
    "id": "headless-interrupts",
@@ -691,7 +693,7 @@
     "approvedAt": null,
     "by": null
    },
-   "probe": "pending (CI mode=probe)"
+   "probe": "CI run 44708218250"
   },
   {
    "id": "webmcp",
@@ -721,7 +723,7 @@
     "approvedAt": null,
     "by": null
    },
-   "probe": "pending (CI mode=probe)"
+   "probe": "CI run 44708218250"
   },
   {
    "id": "multi-agent-subagents",
@@ -753,7 +755,7 @@
     "approvedAt": null,
     "by": null
    },
-   "probe": "pending (CI mode=probe)"
+   "probe": "CI run 44708218250"
   },
   {
    "id": "auth",
@@ -783,7 +785,7 @@
     "approvedAt": null,
     "by": null
    },
-   "probe": "pending (CI mode=probe)"
+   "probe": "CI run 44708218250"
   },
   {
    "id": "inspector",
@@ -811,7 +813,7 @@
     "approvedAt": null,
     "by": null
    },
-   "probe": "pending (CI mode=probe)"
+   "probe": "CI run 44708218250"
   }
  ],
  "quickstartBlocked": "the Angular quickstart's OpenAI Agents backend is a fragment (_common.py has no imports, SLUG/get_forwarded_headers undefined; agent_server.py uses AGENTS and lifespan that are never defined, and no Agent is ever shown) and no runtime server is shown for Angular, so a reader has no working Angular app to build on",

@@ -1,0 +1,9 @@
+{
+ "text": "So basically, the drawer stays empty, even though headless threads lists the same thread fine.",
+ "model": "s2.1-pro-free",
+ "refSha256": "2c9d0ecf4608feacc07c88e869cd4dec601481306a939b7be92fc1bff521a727",
+ "duration": 6.548,
+ "file": "53b5c1df624ad529d8f32b871007b175.mp3",
+ "clip": "OAP-angular-08-ThreadsDrawer",
+ "at": "notepad"
+}

@@ -699,12 +699,21 @@ export const runSubagentsPageAction: PageActionHandler = async (page, config, ro
 };
 
 Object.assign(FINDING_EVIDENCE, {
+  'threads-drawer': [
+    { text: 'shows its locked state when that feature is unavailable', caption: 'Drawer renders empty: no list, no locked state' },
+  ],
   voice: [
     { text: 'Voice backend setup', caption: 'Links to #backend on this same page, which does not exist; no transcriptionService code anywhere' },
   ],
 } satisfies Record<string, DocEvidence[]>);
 
 Object.assign(FINDING_NOTES, {
+  'threads-drawer': [
+    'page says the drawer lists and switches conversations or shows its locked state when threads isnt available',
+    'chatted on agent support,drawer stays an empty panel,no list no locked state',
+    'same runtime with the intelligence key, headless threads lists the thread fine',
+    'page never says what else the drawer needs,had to add the intelligence runtime myself',
+  ].join('\n'),
   voice: [
     'page says the mic button shows in the composer once the runtime has a transcription service',
     'no mic shows up, info says audiofiletranscriptionenabled false',

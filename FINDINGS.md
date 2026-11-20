@@ -1,6 +1,6 @@
 # Findings: OpenAIAgents-Angular (OpenAI Agents SDK Python agent + CopilotKit Angular)
 Open doc defects only. Numbers are stable IDs (code cites `FINDINGS.md #N`); gaps are removed findings.
-Stack: `@copilotkit/angular` 0.6.0, `@copilotkit/runtime` 1.85.0, `@ag-ui/client` 1.0.4, `@angular/core` 22.1.x, agent: `ag-ui-openai-agents` 0.1.0, `openai-agents` 0.25.0, `fastapi`/`uvicorn` on Python 3.13 (uv), model gpt-4.1-mini; Node 26.7.0, npm 11, Windows 11 Pro. Docs: https://docs.copilotkit.ai/angular/openai-agents-python (snapshot 2026-11-20). Statuses other than the quickstart wiring are from the doc audit; probes pending (CI mode=probe).
+Stack: `@copilotkit/angular` 0.6.0, `@copilotkit/runtime` 1.85.0, `@ag-ui/client` 1.0.4, `@angular/core` 22.1.x, agent: `ag-ui-openai-agents` 0.1.0, `openai-agents` 0.25.0, `fastapi`/`uvicorn` on Python 3.13 (uv), model gpt-4.1-mini; Node 26.7.0, npm 11, Windows 11 Pro. Docs: https://docs.copilotkit.ai/angular/openai-agents-python (snapshot 2026-11-20). Evidence: CI run 44708218250 (2026-11-20, scope=all).
 
 ## Dev blockers (seen with `ng serve` and normal use of the page)
 
@@ -14,6 +14,12 @@ Stack: `@copilotkit/angular` 0.6.0, `@copilotkit/runtime` 1.85.0, `@ag-ui/client
 **#2 Voice can't be set up: the transcription backend is never shown.**
 - **Doc:** "Follow the Voice backend setup to add a dedicated Runtime route and transcription service."
 - **Result:** the link goes to `voice#backend` on the same page, a section that doesn't exist; no `transcriptionService` code anywhere. `/info` reports `"audioFileTranscriptionEnabled":false` and the composer has no mic button.
+
+### [Threads Drawer](https://docs.copilotkit.ai/angular/openai-agents-python/prebuilt-components/copilot-threads-drawer)
+**#3 The threads drawer renders empty.**
+- **Doc:** "The drawer reads the platform's `threads` license feature and shows its locked state when that feature is unavailable." and `<copilot-threads-drawer agentId="support" [limit]="20" />`.
+- **Result:** after a chat on agent `support`, the drawer is an empty panel: no thread list and no locked state (CI runs 44710636115, 44711977267). With the same Intelligence runtime and a valid key, Headless Threads' `injectThreads` lists the thread, so the key works. The page never says what else the drawer needs.
+- **Confirmed by harness:** HARNESS `/threads` runtime with `CopilotKitIntelligence` (frontend/server.ts), selected from the demo host with `updateRuntime`.
 
 ### [Tool Call Rendering](https://docs.copilotkit.ai/angular/openai-agents-python/generative-ui/tool-rendering)
 **#5 The weather tool fetches an endpoint the page never provides.**
@@ -36,9 +42,9 @@ Stack: `@copilotkit/angular` 0.6.0, `@copilotkit/runtime` 1.85.0, `@ag-ui/client
 - **Result:** no sandbox iframe ever appears (3/3, also with the config at the app root); the agent writes plain HTML `<button>`s into its chat message instead (rendered static, "This chat may display the controls as static HTML"), so clicking does nothing and nothing is written to `sessionStorage`. The page shows no other step (e.g. the runtime's `openGenerativeUI` option).
 
 ### [Shared State](https://docs.copilotkit.ai/angular/openai-agents-python/shared-state)
-**#9 The agent never sees state written with `agent.setState` (expected; probe pending).**
+**#9 The agent never sees state written with `agent.setState`.**
 - **Doc:** "Click **Mark high priority**, then ask the agent for the current priority. It answers \"high\"."
-- **Result (doc audit):** the page shows only the Angular side. The quickstart says the adapter makes state readable "through `shared_state()`", which only a backend tool can call, and no page shows such a tool, so the quickstart agent has no way to read the priority. To confirm by CI probe.
+- **Result:** the panel shows `Priority: high`; the agent replies "There is no priority currently set. Would you like me to help you set or check a specific priority?" (CI run 44708218250). The page shows only the Angular side; the adapter exposes state "through `shared_state()`", which only a backend tool can call, and no page shows one.
 
 ### [Pausing the Agent for Input](https://docs.copilotkit.ai/angular/openai-agents-python/human-in-the-loop/useInterrupt)
 **#11 No backend that pauses is shown, and the interrupt payload is undocumented.**
@@ -55,7 +61,7 @@ Stack: `@copilotkit/angular` 0.6.0, `@copilotkit/runtime` 1.85.0, `@ag-ui/client
 **#13 The Angular delegation log is a fragment; the only full frontend is React.**
 - **Doc:** the Angular snippet calls `readDelegations(this.agentStore().state())` and `registerRenderToolCall(subAgentRendererConfig(name))` inside a class fragment; the Code tab ("OpenAI Agents SDK (Python): Sub-Agents live demo") has `page.tsx`, `delegation-log.tsx` and a Next.js `route.ts` only.
 - **Result:** `readDelegations`, `subAgentRendererConfig`, `SubAgentName`, `this.agentId`, `this.feature` are never defined; the snippet doesn't compile as given, so the page's main feature (the live delegation log) can't be built in Angular without writing it yourself.
-- **Confirmed by harness:** the verbatim `subagents.py` (with a HARNESS `demo_agents/_common.py` and a HARNESS `/subagents` mount) plus a HARNESS delegation log in `subagents-chat.component.ts` (probe pending).
+- **Confirmed by harness:** the verbatim `subagents.py` (with a HARNESS `demo_agents/_common.py` and a HARNESS `/subagents` mount) plus a HARNESS delegation log in `subagents-chat.component.ts` (CI run 44708218250).
 
 ## Minor notes
 
@@ -69,8 +75,8 @@ Stack: `@copilotkit/angular` 0.6.0, `@copilotkit/runtime` 1.85.0, `@ag-ui/client
 - Authentication: `readSessionToken()` and `verifySession()` are never defined.
 - MCP Apps, Open Generative UI: `runtimeUrl: "/api/copilotkit"` assumes a same-origin runtime the Angular setup doesn't have.
 - Sub-agents: `demo_agents._common` (`MODEL`, `chat_settings`) is never shown, and the agent is never registered or served.
-- Threads Drawer, Headless Threads: neither page says the list needs a CopilotKit Intelligence runtime or where its key goes; `selectedThreadId` is never defined (probe pending with a valid key).
-- Agent Read-Only Context: no backend step shown (the adapter's instruction injection is described only on the quickstart; probe pending).
+- Headless Threads: the page never says the list needs a CopilotKit Intelligence runtime or where its key goes; `selectedThreadId` is never defined.
+- Agent Read-Only Context: no backend step shown; works anyway (the adapter adds the context to the instructions; the agent named Ada, Europe/London, record-42).
 - Sub-agents: links to `/angular/openai-agents-python/shared-state/streaming`, which is a 404.
 - "Next steps" links drop `/openai-agents-python` (e.g. `/angular/prebuilt-components`).
 

@@ -126,6 +126,7 @@ export const PAGES = definePages([
     ideFile: 'frontend/src/app/features/threads/conversations.component.ts',
     startLine: 1,
     endLine: 25,
+    extraTabs: [{ filePath: 'frontend/src/app/features/threads/threads-drawer-demo.component.ts', startLine: 1, endLine: 20, addedText: "    inject(CopilotKit).updateRuntime({ runtimeUrl: 'http://localhost:8290/threads/api/copilotkit' });" }],
     prompt: 'Hi! Give me a one-line tip for staying focused.',
     waitAfterPromptMs: 3000,
   },

@@ -1,0 +1,38 @@
+{
+ "clip": "OAP-angular-08-ThreadsDrawer",
+ "page": "threads-drawer",
+ "segments": [
+  {
+   "at": "doc",
+   "text": "Ok so this is the Threads Drawer page for OpenAI Agents with Angular, and I'm reporting a problem on this page."
+  },
+  {
+   "at": "evidence",
+   "text": "So this is the problem, umm, it says the drawer lists your conversations, or shows a locked state, but neither shows up."
+  },
+  {
+   "at": "ide",
+   "text": "This is my project, I've implemented the exact code from the doc."
+  },
+  {
+   "at": "+",
+   "text": "This part, the Intelligence runtime, wasn't on the page, so I added it myself."
+  },
+  {
+   "at": "demo",
+   "text": "Moving on to the demo. After chatting, the drawer should list the conversation, but it's just an empty panel."
+  },
+  {
+   "at": "notepad",
+   "text": "So basically, the drawer stays empty, even though headless threads lists the same thread fine."
+  },
+  {
+   "at": "+",
+   "text": "The page never says what else the drawer needs."
+  },
+  {
+   "at": "+",
+   "text": "So umm, kindly check this one."
+  }
+ ]
+}
