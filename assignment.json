@@ -1,821 +1,821 @@
 {
- "framework": "OpenAI Agents Python",
- "ui": "angular",
- "repo": "(not created yet)",
- "docBase": "https://docs.copilotkit.ai/angular/openai-agents-python/",
- "versions": {},
- "testedContext": {
-  "os": "Microsoft Windows 11 Pro",
-  "packageManager": "npm 11 (Node 26.7.0)"
- },
- "report": {
-  "style": "team",
-  "h1": "OpenAI Agents",
-  "title": "OpenAI Agents Python Angular testing",
-  "quickstartHeading": "Quickstart",
-  "quickstartHeader": null,
-  "clipsToUpload": false,
-  "guidesHeading": "Angular Guides",
-  "columns": [
-   "Page/Section",
-   "Results"
+  "framework": "OpenAI Agents Python",
+  "ui": "angular",
+  "repo": "(not created yet)",
+  "docBase": "https://docs.copilotkit.ai/angular/openai-agents-python/",
+  "versions": {},
+  "testedContext": {
+    "os": "Microsoft Windows 11 Pro",
+    "packageManager": "npm 11 (Node 26.7.0)"
+  },
+  "report": {
+    "style": "team",
+    "h1": "OpenAI Agents",
+    "title": "OpenAI Agents Python Angular testing",
+    "quickstartHeading": "Quickstart",
+    "quickstartHeader": null,
+    "clipsToUpload": false,
+    "guidesHeading": "Angular Guides",
+    "columns": [
+      "Page/Section",
+      "Results"
+    ],
+    "resultColumn": 1
+  },
+  "sections": [
+    {
+      "label": "Chat",
+      "cells": [
+        "Sub section"
+      ]
+    },
+    {
+      "label": "Custom Look and Feel",
+      "cells": [
+        "Sub section"
+      ]
+    },
+    {
+      "label": "Threads",
+      "cells": [
+        "Sub section"
+      ]
+    },
+    {
+      "label": "Basics",
+      "cells": [
+        "Section"
+      ]
+    },
+    {
+      "label": "Generative UI",
+      "cells": [
+        "Section"
+      ]
+    },
+    {
+      "label": "Shared state",
+      "cells": [
+        "Sub section"
+      ]
+    },
+    {
+      "label": "Human-in-the-loop",
+      "cells": [
+        "Sub section"
+      ]
+    },
+    {
+      "label": "Interactivity",
+      "cells": [
+        "Section"
+      ]
+    },
+    {
+      "label": "Agent capabilities",
+      "cells": [
+        "Section"
+      ]
+    },
+    {
+      "label": "Debugging",
+      "cells": [
+        "Sub section"
+      ]
+    }
   ],
-  "resultColumn": 1
- },
- "sections": [
-  {
-   "label": "Chat",
-   "cells": [
-    "Sub section"
-   ]
-  },
-  {
-   "label": "Custom Look and Feel",
-   "cells": [
-    "Sub section"
-   ]
-  },
-  {
-   "label": "Threads",
-   "cells": [
-    "Sub section"
-   ]
-  },
-  {
-   "label": "Basics",
-   "cells": [
-    "Section"
-   ]
-  },
-  {
-   "label": "Generative UI",
-   "cells": [
-    "Section"
-   ]
-  },
-  {
-   "label": "Shared state",
-   "cells": [
-    "Sub section"
-   ]
-  },
-  {
-   "label": "Human-in-the-loop",
-   "cells": [
-    "Sub section"
-   ]
-  },
-  {
-   "label": "Interactivity",
-   "cells": [
-    "Section"
-   ]
-  },
-  {
-   "label": "Agent capabilities",
-   "cells": [
-    "Section"
-   ]
-  },
-  {
-   "label": "Debugging",
-   "cells": [
-    "Sub section"
-   ]
-  }
- ],
- "pages": [
-  {
-   "id": "quickstart",
-   "label": "Angular",
-   "kind": "quickstart",
-   "group": null,
-   "child": false,
-   "docPath": "",
-   "reachable": "sidebar",
-   "status": "❌",
-   "findings": [
-    1
-   ],
-   "notes": [
-    "Issue: the OpenAI Agents backend code is a fragment (_common.py has no imports and undefined SLUG/get_forwarded_headers, agent_server.py uses AGENTS and lifespan that are never defined, no Agent is shown) and no runtime server is shown for Angular; the linked runtime guide only has a Next.js route."
-   ],
-   "block": null,
-   "links": [
+  "pages": [
     {
-     "text": "Not Working",
-     "clip": "OAP-angular-01-Quickstart",
-     "loom": null,
-     "narration": "narration/scripts/OAP-angular-01-Quickstart.json",
-     "filmed": null
-    }
-   ],
-   "review": {
-    "verdict": null,
-    "approvedAt": null,
-    "by": null
-   },
-   "probe": "CI run 44708218250"
-  },
-  {
-   "id": "prebuilt-components",
-   "label": "Prebuilt Components",
-   "kind": "guide",
-   "group": "Chat",
-   "child": true,
-   "docPath": "prebuilt-components",
-   "reachable": "sidebar",
-   "status": "✅",
-   "findings": [],
-   "notes": [
-    "Note: the page's AppComponent mounts the popup and the sidebar together; both launchers sit on the same spot, so the popup launcher click opens the sidebar. Mount one at a time."
-   ],
-   "block": null,
-   "links": [
+      "id": "quickstart",
+      "label": "Angular",
+      "kind": "quickstart",
+      "group": null,
+      "child": false,
+      "docPath": "",
+      "reachable": "sidebar",
+      "status": "❌",
+      "findings": [
+        1
+      ],
+      "notes": [
+        "Issue: the OpenAI Agents backend code is a fragment (_common.py has no imports and undefined SLUG/get_forwarded_headers, agent_server.py uses AGENTS and lifespan that are never defined, no Agent is shown) and no runtime server is shown for Angular; the linked runtime guide only has a Next.js route."
+      ],
+      "block": null,
+      "links": [
+        {
+          "text": "Not Working",
+          "clip": "OAP-angular-01-Quickstart",
+          "loom": "https://www.loom.com/share/141558a3864b42fc882f6050925190c4",
+          "narration": "narration/scripts/OAP-angular-01-Quickstart.json",
+          "filmed": "2026-11-20"
+        }
+      ],
+      "review": {
+        "verdict": null,
+        "approvedAt": null,
+        "by": null
+      },
+      "probe": "CI run 44708218250"
+    },
     {
-     "text": "Prebuilt Components - Angular",
-     "clip": "OAP-angular-02-PrebuiltComponents",
-     "loom": null,
-     "narration": null,
-     "filmed": null
-    }
-   ],
-   "review": {
-    "verdict": null,
-    "approvedAt": null,
-    "by": null
-   },
-   "probe": "CI run 44708218250"
-  },
-  {
-   "id": "multimodal-attachments",
-   "label": "Multimodal Attachments",
-   "kind": "guide",
-   "group": "Chat",
-   "child": true,
-   "docPath": "multimodal-attachments",
-   "reachable": "sidebar",
-   "status": "✅",
-   "findings": [],
-   "notes": [],
-   "block": null,
-   "links": [
+      "id": "prebuilt-components",
+      "label": "Prebuilt Components",
+      "kind": "guide",
+      "group": "Chat",
+      "child": true,
+      "docPath": "prebuilt-components",
+      "reachable": "sidebar",
+      "status": "✅",
+      "findings": [],
+      "notes": [
+        "Note: the page's AppComponent mounts the popup and the sidebar together; both launchers sit on the same spot, so the popup launcher click opens the sidebar. Mount one at a time."
+      ],
+      "block": null,
+      "links": [
+        {
+          "text": "Prebuilt Components - Angular",
+          "clip": "OAP-angular-02-PrebuiltComponents",
+          "loom": "https://www.loom.com/share/92f7e287efe646869c91b2247bb92ac8",
+          "narration": null,
+          "filmed": "2026-11-20"
+        }
+      ],
+      "review": {
+        "verdict": null,
+        "approvedAt": null,
+        "by": null
+      },
+      "probe": "CI run 44708218250"
+    },
     {
-     "text": "Multimodal Attachments - Angular",
-     "clip": "OAP-angular-03-MultimodalAttachments",
-     "loom": null,
-     "narration": null,
-     "filmed": null
-    }
-   ],
-   "review": {
-    "verdict": null,
-    "approvedAt": null,
-    "by": null
-   },
-   "probe": "CI run 44708218250"
-  },
-  {
-   "id": "voice",
-   "label": "Voice",
-   "kind": "guide",
-   "group": "Chat",
-   "child": true,
-   "docPath": "voice",
-   "reachable": "sidebar",
-   "status": "❌",
-   "findings": [
-    2
-   ],
-   "notes": [
-    "Issue: the \"Voice backend setup\" link points back to this page (#backend doesn't exist) and no transcription service code is shown, so no mic button ever shows."
-   ],
-   "block": null,
-   "links": [
+      "id": "multimodal-attachments",
+      "label": "Multimodal Attachments",
+      "kind": "guide",
+      "group": "Chat",
+      "child": true,
+      "docPath": "multimodal-attachments",
+      "reachable": "sidebar",
+      "status": "✅",
+      "findings": [],
+      "notes": [],
+      "block": null,
+      "links": [
+        {
+          "text": "Multimodal Attachments - Angular",
+          "clip": "OAP-angular-03-MultimodalAttachments",
+          "loom": "https://www.loom.com/share/10aaa3f0c6dd4f6a8867062ead2e0c6a",
+          "narration": null,
+          "filmed": "2026-11-20"
+        }
+      ],
+      "review": {
+        "verdict": null,
+        "approvedAt": null,
+        "by": null
+      },
+      "probe": "CI run 44708218250"
+    },
     {
-     "text": "Issue",
-     "clip": "OAP-angular-04-Voice",
-     "loom": null,
-     "narration": "narration/scripts/OAP-angular-04-Voice.json",
-     "filmed": null
-    }
-   ],
-   "review": {
-    "verdict": null,
-    "approvedAt": null,
-    "by": null
-   },
-   "probe": "CI run 44708218250"
-  },
-  {
-   "id": "clf-css",
-   "label": "CSS Customization",
-   "kind": "guide",
-   "group": "Custom Look and Feel",
-   "child": true,
-   "docPath": "custom-look-and-feel/css",
-   "reachable": "sidebar",
-   "status": "✅",
-   "findings": [],
-   "notes": [],
-   "block": null,
-   "links": [
+      "id": "voice",
+      "label": "Voice",
+      "kind": "guide",
+      "group": "Chat",
+      "child": true,
+      "docPath": "voice",
+      "reachable": "sidebar",
+      "status": "❌",
+      "findings": [
+        2
+      ],
+      "notes": [
+        "Issue: the \"Voice backend setup\" link points back to this page (#backend doesn't exist) and no transcription service code is shown, so no mic button ever shows."
+      ],
+      "block": null,
+      "links": [
+        {
+          "text": "Issue",
+          "clip": "OAP-angular-04-Voice",
+          "loom": "https://www.loom.com/share/56b98a5472c349b4ad23dc8c82cddd8d",
+          "narration": "narration/scripts/OAP-angular-04-Voice.json",
+          "filmed": "2026-11-20"
+        }
+      ],
+      "review": {
+        "verdict": null,
+        "approvedAt": null,
+        "by": null
+      },
+      "probe": "CI run 44708218250"
+    },
     {
-     "text": "CSS Customization - Angular",
-     "clip": "OAP-angular-05-ClfCss",
-     "loom": null,
-     "narration": null,
-     "filmed": null
-    }
-   ],
-   "review": {
-    "verdict": null,
-    "approvedAt": null,
-    "by": null
-   },
-   "probe": "CI run 44708218250"
-  },
-  {
-   "id": "clf-slots",
-   "label": "Slots (Subcomponents)",
-   "kind": "guide",
-   "group": "Custom Look and Feel",
-   "child": true,
-   "docPath": "custom-look-and-feel/slots",
-   "reachable": "sidebar",
-   "status": "✅",
-   "findings": [],
-   "notes": [],
-   "block": null,
-   "links": [
+      "id": "clf-css",
+      "label": "CSS Customization",
+      "kind": "guide",
+      "group": "Custom Look and Feel",
+      "child": true,
+      "docPath": "custom-look-and-feel/css",
+      "reachable": "sidebar",
+      "status": "✅",
+      "findings": [],
+      "notes": [],
+      "block": null,
+      "links": [
+        {
+          "text": "CSS Customization - Angular",
+          "clip": "OAP-angular-05-ClfCss",
+          "loom": "https://www.loom.com/share/c3d9dcf123034741beab8d8655965a0a",
+          "narration": null,
+          "filmed": "2026-11-20"
+        }
+      ],
+      "review": {
+        "verdict": null,
+        "approvedAt": null,
+        "by": null
+      },
+      "probe": "CI run 44708218250"
+    },
     {
-     "text": "Slots (Subcomponents) - Angular",
-     "clip": "OAP-angular-06-ClfSlots",
-     "loom": null,
-     "narration": null,
-     "filmed": null
-    }
-   ],
-   "review": {
-    "verdict": null,
-    "approvedAt": null,
-    "by": null
-   },
-   "probe": "CI run 44708218250"
-  },
-  {
-   "id": "clf-headless-ui",
-   "label": "Headless UI",
-   "kind": "guide",
-   "group": "Custom Look and Feel",
-   "child": true,
-   "docPath": "custom-look-and-feel/headless-ui",
-   "reachable": "sidebar",
-   "status": "✅",
-   "findings": [],
-   "notes": [],
-   "block": null,
-   "links": [
+      "id": "clf-slots",
+      "label": "Slots (Subcomponents)",
+      "kind": "guide",
+      "group": "Custom Look and Feel",
+      "child": true,
+      "docPath": "custom-look-and-feel/slots",
+      "reachable": "sidebar",
+      "status": "✅",
+      "findings": [],
+      "notes": [],
+      "block": null,
+      "links": [
+        {
+          "text": "Slots (Subcomponents) - Angular",
+          "clip": "OAP-angular-06-ClfSlots",
+          "loom": "https://www.loom.com/share/5fec10a1e79e41929e8f172348e3517a",
+          "narration": null,
+          "filmed": "2026-11-20"
+        }
+      ],
+      "review": {
+        "verdict": null,
+        "approvedAt": null,
+        "by": null
+      },
+      "probe": "CI run 44708218250"
+    },
     {
-     "text": "Headless UI - Angular",
-     "clip": "OAP-angular-07-ClfHeadlessUi",
-     "loom": null,
-     "narration": null,
-     "filmed": null
-    }
-   ],
-   "review": {
-    "verdict": null,
-    "approvedAt": null,
-    "by": null
-   },
-   "probe": "CI run 44708218250"
-  },
-  {
-   "id": "threads-drawer",
-   "label": "Threads Drawer",
-   "kind": "guide",
-   "group": "Threads",
-   "child": true,
-   "docPath": "prebuilt-components/copilot-threads-drawer",
-   "reachable": "sidebar",
-   "status": "❌",
-   "findings": [
-    3
-   ],
-   "notes": [
-    "Issue: the drawer renders as an empty panel (no thread list, no locked state) after a chat on agent \"support\", 2/2 CI runs, while Headless Threads lists the thread on the same Intelligence runtime; the page never says what else the drawer needs."
-   ],
-   "block": null,
-   "links": [
+      "id": "clf-headless-ui",
+      "label": "Headless UI",
+      "kind": "guide",
+      "group": "Custom Look and Feel",
+      "child": true,
+      "docPath": "custom-look-and-feel/headless-ui",
+      "reachable": "sidebar",
+      "status": "✅",
+      "findings": [],
+      "notes": [],
+      "block": null,
+      "links": [
+        {
+          "text": "Headless UI - Angular",
+          "clip": "OAP-angular-07-ClfHeadlessUi",
+          "loom": "https://www.loom.com/share/5e0f83ff9bba495593385d175777eae3",
+          "narration": null,
+          "filmed": "2026-11-20"
+        }
+      ],
+      "review": {
+        "verdict": null,
+        "approvedAt": null,
+        "by": null
+      },
+      "probe": "CI run 44708218250"
+    },
     {
-     "text": "Issue",
-     "clip": "OAP-angular-08-ThreadsDrawer",
-     "loom": null,
-     "narration": "narration/scripts/OAP-angular-08-ThreadsDrawer.json",
-     "filmed": null
-    }
-   ],
-   "review": {
-    "verdict": null,
-    "approvedAt": null,
-    "by": null
-   },
-   "probe": "CI runs 44710636115 + 44711977267 (2/2 fail, valid key)"
-  },
-  {
-   "id": "headless-threads",
-   "label": "Headless Threads",
-   "kind": "guide",
-   "group": "Threads",
-   "child": true,
-   "docPath": "headless-threads",
-   "reachable": "sidebar",
-   "status": "✅",
-   "findings": [],
-   "notes": [
-    "Note: selectedThreadId is never defined and the page never says the list needs a CopilotKit Intelligence runtime."
-   ],
-   "block": null,
-   "links": [
+      "id": "threads-drawer",
+      "label": "Threads Drawer",
+      "kind": "guide",
+      "group": "Threads",
+      "child": true,
+      "docPath": "prebuilt-components/copilot-threads-drawer",
+      "reachable": "sidebar",
+      "status": "❌",
+      "findings": [
+        3
+      ],
+      "notes": [
+        "Issue: the drawer renders as an empty panel (no thread list, no locked state) after a chat on agent \"support\", 2/2 CI runs, while Headless Threads lists the thread on the same Intelligence runtime; the page never says what else the drawer needs."
+      ],
+      "block": null,
+      "links": [
+        {
+          "text": "Issue",
+          "clip": "OAP-angular-08-ThreadsDrawer",
+          "loom": "https://www.loom.com/share/9f56024994e2428f89645bec895ca544",
+          "narration": "narration/scripts/OAP-angular-08-ThreadsDrawer.json",
+          "filmed": "2026-11-20"
+        }
+      ],
+      "review": {
+        "verdict": null,
+        "approvedAt": null,
+        "by": null
+      },
+      "probe": "CI runs 44710636115 + 44711977267 (2/2 fail, valid key)"
+    },
     {
-     "text": "Headless Threads - JS",
-     "clip": "OAP-angular-09-HeadlessThreads",
-     "loom": null,
-     "narration": null,
-     "filmed": null
-    }
-   ],
-   "review": {
-    "verdict": null,
-    "approvedAt": null,
-    "by": null
-   },
-   "probe": "CI run 44710636115 (pass, valid key)"
-  },
-  {
-   "id": "frontend-tools",
-   "label": "Frontend Tools",
-   "kind": "guide",
-   "group": "Basics",
-   "child": false,
-   "docPath": "frontend-tools",
-   "reachable": "sidebar",
-   "status": "✅",
-   "findings": [],
-   "notes": [
-    "Note: the snippet has no imports and never defines BackgroundToolArgs / resolveGradient."
-   ],
-   "block": null,
-   "links": [
+      "id": "headless-threads",
+      "label": "Headless Threads",
+      "kind": "guide",
+      "group": "Threads",
+      "child": true,
+      "docPath": "headless-threads",
+      "reachable": "sidebar",
+      "status": "✅",
+      "findings": [],
+      "notes": [
+        "Note: selectedThreadId is never defined and the page never says the list needs a CopilotKit Intelligence runtime."
+      ],
+      "block": null,
+      "links": [
+        {
+          "text": "Headless Threads - JS",
+          "clip": "OAP-angular-09-HeadlessThreads",
+          "loom": "https://www.loom.com/share/89eb81cf6f0546c2b197014981746b85",
+          "narration": null,
+          "filmed": "2026-11-20"
+        }
+      ],
+      "review": {
+        "verdict": null,
+        "approvedAt": null,
+        "by": null
+      },
+      "probe": "CI run 44710636115 (pass, valid key)"
+    },
     {
-     "text": "Frontend Tools - Angular",
-     "clip": "OAP-angular-10-FrontendTools",
-     "loom": null,
-     "narration": null,
-     "filmed": null
-    }
-   ],
-   "review": {
-    "verdict": null,
-    "approvedAt": null,
-    "by": null
-   },
-   "probe": "CI run 44708218250"
-  },
-  {
-   "id": "gen-ui-tool-based",
-   "label": "Components as Tools",
-   "kind": "guide",
-   "group": "Generative UI",
-   "child": true,
-   "docPath": "generative-ui/tool-based",
-   "reachable": "sidebar",
-   "status": "✅",
-   "findings": [],
-   "notes": [],
-   "block": null,
-   "links": [
+      "id": "frontend-tools",
+      "label": "Frontend Tools",
+      "kind": "guide",
+      "group": "Basics",
+      "child": false,
+      "docPath": "frontend-tools",
+      "reachable": "sidebar",
+      "status": "✅",
+      "findings": [],
+      "notes": [
+        "Note: the snippet has no imports and never defines BackgroundToolArgs / resolveGradient."
+      ],
+      "block": null,
+      "links": [
+        {
+          "text": "Frontend Tools - Angular",
+          "clip": "OAP-angular-10-FrontendTools",
+          "loom": "https://www.loom.com/share/26cd684b603e4523bbaff4a4c976903a",
+          "narration": null,
+          "filmed": "2026-11-20"
+        }
+      ],
+      "review": {
+        "verdict": null,
+        "approvedAt": null,
+        "by": null
+      },
+      "probe": "CI run 44708218250"
+    },
     {
-     "text": "Components as Tools - Angular",
-     "clip": "OAP-angular-11-GenUiToolBased",
-     "loom": null,
-     "narration": null,
-     "filmed": null
-    }
-   ],
-   "review": {
-    "verdict": null,
-    "approvedAt": null,
-    "by": null
-   },
-   "probe": "CI run 44708218250"
-  },
-  {
-   "id": "gen-ui-tool-rendering",
-   "label": "Tool Call Rendering",
-   "kind": "guide",
-   "group": "Generative UI",
-   "child": true,
-   "docPath": "generative-ui/tool-rendering",
-   "reachable": "sidebar",
-   "status": "❌",
-   "findings": [
-    5
-   ],
-   "notes": [
-    "Issue: the tool handler fetches /api/weather, which the page never provides, so the card shows the app's index.html as the result and the agent can't report the weather."
-   ],
-   "block": null,
-   "links": [
+      "id": "gen-ui-tool-based",
+      "label": "Components as Tools",
+      "kind": "guide",
+      "group": "Generative UI",
+      "child": true,
+      "docPath": "generative-ui/tool-based",
+      "reachable": "sidebar",
+      "status": "✅",
+      "findings": [],
+      "notes": [],
+      "block": null,
+      "links": [
+        {
+          "text": "Components as Tools - Angular",
+          "clip": "OAP-angular-11-GenUiToolBased",
+          "loom": "https://www.loom.com/share/5b627ef31758481c8d2cf5a670e47b42",
+          "narration": null,
+          "filmed": "2026-11-20"
+        }
+      ],
+      "review": {
+        "verdict": null,
+        "approvedAt": null,
+        "by": null
+      },
+      "probe": "CI run 44708218250"
+    },
     {
-     "text": "Issue",
-     "clip": "OAP-angular-12-GenUiToolRendering",
-     "loom": null,
-     "narration": "narration/scripts/OAP-angular-12-GenUiToolRendering.json",
-     "filmed": null
-    }
-   ],
-   "review": {
-    "verdict": null,
-    "approvedAt": null,
-    "by": null
-   },
-   "probe": "CI run 44708218250"
-  },
-  {
-   "id": "a2ui",
-   "label": "A2UI",
-   "kind": "guide",
-   "group": "Generative UI",
-   "child": true,
-   "docPath": "generative-ui/a2ui",
-   "reachable": "sidebar",
-   "status": "❌",
-   "findings": [
-    6
-   ],
-   "notes": [
-    "Issue: catalog: productCatalog is never defined (nor dynamicString, AcmeBadge, PanelComponent), so A2UI stays off and nothing renders."
-   ],
-   "block": null,
-   "links": [
+      "id": "gen-ui-tool-rendering",
+      "label": "Tool Call Rendering",
+      "kind": "guide",
+      "group": "Generative UI",
+      "child": true,
+      "docPath": "generative-ui/tool-rendering",
+      "reachable": "sidebar",
+      "status": "❌",
+      "findings": [
+        5
+      ],
+      "notes": [
+        "Issue: the tool handler fetches /api/weather, which the page never provides, so the card shows the app's index.html as the result and the agent can't report the weather."
+      ],
+      "block": null,
+      "links": [
+        {
+          "text": "Issue",
+          "clip": "OAP-angular-12-GenUiToolRendering",
+          "loom": "https://www.loom.com/share/01030a10262049e1b4e6e1fcf3fd460f",
+          "narration": "narration/scripts/OAP-angular-12-GenUiToolRendering.json",
+          "filmed": "2026-11-20"
+        }
+      ],
+      "review": {
+        "verdict": null,
+        "approvedAt": null,
+        "by": null
+      },
+      "probe": "CI run 44708218250"
+    },
     {
-     "text": "Issue",
-     "clip": "OAP-angular-13-A2ui",
-     "loom": null,
-     "narration": "narration/scripts/OAP-angular-13-A2ui.json",
-     "filmed": null
-    }
-   ],
-   "review": {
-    "verdict": null,
-    "approvedAt": null,
-    "by": null
-   },
-   "probe": "CI run 44708218250"
-  },
-  {
-   "id": "mcp-apps",
-   "label": "MCP Apps",
-   "kind": "guide",
-   "group": "Generative UI",
-   "child": true,
-   "docPath": "generative-ui/mcp-apps",
-   "reachable": "sidebar",
-   "status": "❌",
-   "findings": [
-    7
-   ],
-   "notes": [
-    "Issue: the page only shows provideMCPApps(); no MCP server or runtime mcpApps config is given, so the agent has no app to open."
-   ],
-   "block": null,
-   "links": [
+      "id": "a2ui",
+      "label": "A2UI",
+      "kind": "guide",
+      "group": "Generative UI",
+      "child": true,
+      "docPath": "generative-ui/a2ui",
+      "reachable": "sidebar",
+      "status": "❌",
+      "findings": [
+        6
+      ],
+      "notes": [
+        "Issue: catalog: productCatalog is never defined (nor dynamicString, AcmeBadge, PanelComponent), so A2UI stays off and nothing renders."
+      ],
+      "block": null,
+      "links": [
+        {
+          "text": "Issue",
+          "clip": "OAP-angular-13-A2ui",
+          "loom": "https://www.loom.com/share/adbf565003f1433794ada3f457262a9d",
+          "narration": "narration/scripts/OAP-angular-13-A2ui.json",
+          "filmed": "2026-11-20"
+        }
+      ],
+      "review": {
+        "verdict": null,
+        "approvedAt": null,
+        "by": null
+      },
+      "probe": "CI run 44708218250"
+    },
     {
-     "text": "Issue",
-     "clip": "OAP-angular-14-McpApps",
-     "loom": null,
-     "narration": "narration/scripts/OAP-angular-14-McpApps.json",
-     "filmed": null
-    }
-   ],
-   "review": {
-    "verdict": null,
-    "approvedAt": null,
-    "by": null
-   },
-   "probe": "CI run 44708218250"
-  },
-  {
-   "id": "open-generative-ui",
-   "label": "Open Generative UI",
-   "kind": "guide",
-   "group": "Generative UI",
-   "child": true,
-   "docPath": "generative-ui/open-generative-ui",
-   "reachable": "sidebar",
-   "status": "❌",
-   "findings": [
-    8
-   ],
-   "notes": [
-    "Issue: with the page's openGenerativeUI provider config, no sandboxed UI ever renders; the page shows nothing else that is needed."
-   ],
-   "block": null,
-   "links": [
+      "id": "mcp-apps",
+      "label": "MCP Apps",
+      "kind": "guide",
+      "group": "Generative UI",
+      "child": true,
+      "docPath": "generative-ui/mcp-apps",
+      "reachable": "sidebar",
+      "status": "❌",
+      "findings": [
+        7
+      ],
+      "notes": [
+        "Issue: the page only shows provideMCPApps(); no MCP server or runtime mcpApps config is given, so the agent has no app to open."
+      ],
+      "block": null,
+      "links": [
+        {
+          "text": "Issue",
+          "clip": "OAP-angular-14-McpApps",
+          "loom": "https://www.loom.com/share/02cd7e54b165466c868ed60de542ade6",
+          "narration": "narration/scripts/OAP-angular-14-McpApps.json",
+          "filmed": "2026-11-20"
+        }
+      ],
+      "review": {
+        "verdict": null,
+        "approvedAt": null,
+        "by": null
+      },
+      "probe": "CI run 44708218250"
+    },
     {
-     "text": "Issue",
-     "clip": "OAP-angular-15-OpenGenerativeUi",
-     "loom": null,
-     "narration": "narration/scripts/OAP-angular-15-OpenGenerativeUi.json",
-     "filmed": null
-    }
-   ],
-   "review": {
-    "verdict": null,
-    "approvedAt": null,
-    "by": null
-   },
-   "probe": "CI run 44708218250"
-  },
-  {
-   "id": "shared-state",
-   "label": "Shared State",
-   "kind": "guide",
-   "group": "Shared state",
-   "child": true,
-   "docPath": "shared-state",
-   "reachable": "sidebar",
-   "status": "❌",
-   "findings": [
-    9
-   ],
-   "notes": [
-    "Issue: after Mark high priority the agent can't tell the priority; the page shows no backend side, and the quickstart agent never reads the state written with agent.setState."
-   ],
-   "block": null,
-   "links": [
+      "id": "open-generative-ui",
+      "label": "Open Generative UI",
+      "kind": "guide",
+      "group": "Generative UI",
+      "child": true,
+      "docPath": "generative-ui/open-generative-ui",
+      "reachable": "sidebar",
+      "status": "❌",
+      "findings": [
+        8
+      ],
+      "notes": [
+        "Issue: with the page's openGenerativeUI provider config, no sandboxed UI ever renders; the page shows nothing else that is needed."
+      ],
+      "block": null,
+      "links": [
+        {
+          "text": "Issue",
+          "clip": "OAP-angular-15-OpenGenerativeUi",
+          "loom": "https://www.loom.com/share/493d32edaac24b1d9845cc210017c56c",
+          "narration": "narration/scripts/OAP-angular-15-OpenGenerativeUi.json",
+          "filmed": "2026-11-20"
+        }
+      ],
+      "review": {
+        "verdict": null,
+        "approvedAt": null,
+        "by": null
+      },
+      "probe": "CI run 44708218250"
+    },
     {
-     "text": "Issue",
-     "clip": "OAP-angular-16-SharedState",
-     "loom": null,
-     "narration": "narration/scripts/OAP-angular-16-SharedState.json",
-     "filmed": null
-    }
-   ],
-   "review": {
-    "verdict": null,
-    "approvedAt": null,
-    "by": null
-   },
-   "probe": "CI runs 44708218250 + 44711977267 (2/2 fail)"
-  },
-  {
-   "id": "agent-readonly",
-   "label": "Agent Read-Only Context",
-   "kind": "guide",
-   "group": "Shared state",
-   "child": true,
-   "docPath": "shared-state/agent-readonly",
-   "reachable": "sidebar",
-   "status": "✅",
-   "findings": [],
-   "notes": [
-    "Note: expected to work: the OpenAI Agents adapter appends connectAgentContext entries to the instructions."
-   ],
-   "block": null,
-   "links": [
+      "id": "shared-state",
+      "label": "Shared State",
+      "kind": "guide",
+      "group": "Shared state",
+      "child": true,
+      "docPath": "shared-state",
+      "reachable": "sidebar",
+      "status": "❌",
+      "findings": [
+        9
+      ],
+      "notes": [
+        "Issue: after Mark high priority the agent can't tell the priority; the page shows no backend side, and the quickstart agent never reads the state written with agent.setState."
+      ],
+      "block": null,
+      "links": [
+        {
+          "text": "Issue",
+          "clip": "OAP-angular-16-SharedState",
+          "loom": "https://www.loom.com/share/0858fd16c7a7447fac5e4275007564e6",
+          "narration": "narration/scripts/OAP-angular-16-SharedState.json",
+          "filmed": "2026-11-20"
+        }
+      ],
+      "review": {
+        "verdict": null,
+        "approvedAt": null,
+        "by": null
+      },
+      "probe": "CI runs 44708218250 + 44711977267 (2/2 fail)"
+    },
     {
-     "text": "Agent Read-Only Context - JS",
-     "clip": "OAP-angular-17-AgentReadonly",
-     "loom": null,
-     "narration": null,
-     "filmed": null
-    }
-   ],
-   "review": {
-    "verdict": null,
-    "approvedAt": null,
-    "by": null
-   },
-   "probe": "CI run 44708218250"
-  },
-  {
-   "id": "human-in-the-loop",
-   "label": "HITL Overview",
-   "kind": "guide",
-   "group": "Human-in-the-loop",
-   "child": true,
-   "docPath": "human-in-the-loop",
-   "reachable": "sidebar",
-   "status": "✅",
-   "findings": [],
-   "notes": [
-    "Note: the page never says where ApprovalToolsService is provided."
-   ],
-   "block": null,
-   "links": [
+      "id": "agent-readonly",
+      "label": "Agent Read-Only Context",
+      "kind": "guide",
+      "group": "Shared state",
+      "child": true,
+      "docPath": "shared-state/agent-readonly",
+      "reachable": "sidebar",
+      "status": "✅",
+      "findings": [],
+      "notes": [
+        "Note: expected to work: the OpenAI Agents adapter appends connectAgentContext entries to the instructions."
+      ],
+      "block": null,
+      "links": [
+        {
+          "text": "Agent Read-Only Context - JS",
+          "clip": "OAP-angular-17-AgentReadonly",
+          "loom": "https://www.loom.com/share/06e9e25ea4cc4370b96188e40ccee73b",
+          "narration": null,
+          "filmed": "2026-11-20"
+        }
+      ],
+      "review": {
+        "verdict": null,
+        "approvedAt": null,
+        "by": null
+      },
+      "probe": "CI run 44708218250"
+    },
     {
-     "text": "HITL Overview - Angular",
-     "clip": "OAP-angular-18-HitlOverview",
-     "loom": null,
-     "narration": null,
-     "filmed": null
-    }
-   ],
-   "review": {
-    "verdict": null,
-    "approvedAt": null,
-    "by": null
-   },
-   "probe": "CI run 44708218250"
-  },
-  {
-   "id": "use-interrupt",
-   "label": "Pausing the Agent for Input",
-   "kind": "guide",
-   "group": "Human-in-the-loop",
-   "child": true,
-   "docPath": "human-in-the-loop/useInterrupt",
-   "reachable": "sidebar",
-   "status": "❌",
-   "findings": [
-    11
-   ],
-   "notes": [
-    "Issue: no backend that pauses is shown, injectInterrupt(\"default\") watches an agent that never interrupts, and the interrupt payload shape (title/choices) is never given."
-   ],
-   "block": null,
-   "links": [
+      "id": "human-in-the-loop",
+      "label": "HITL Overview",
+      "kind": "guide",
+      "group": "Human-in-the-loop",
+      "child": true,
+      "docPath": "human-in-the-loop",
+      "reachable": "sidebar",
+      "status": "✅",
+      "findings": [],
+      "notes": [
+        "Note: the page never says where ApprovalToolsService is provided."
+      ],
+      "block": null,
+      "links": [
+        {
+          "text": "HITL Overview - Angular",
+          "clip": "OAP-angular-18-HitlOverview",
+          "loom": "https://www.loom.com/share/116a9d6948d34d03832219ce36c79aac",
+          "narration": null,
+          "filmed": "2026-11-20"
+        }
+      ],
+      "review": {
+        "verdict": null,
+        "approvedAt": null,
+        "by": null
+      },
+      "probe": "CI run 44708218250"
+    },
     {
-     "text": "Issue",
-     "clip": "OAP-angular-19-UseInterrupt",
-     "loom": null,
-     "narration": "narration/scripts/OAP-angular-19-UseInterrupt.json",
-     "filmed": null
-    }
-   ],
-   "review": {
-    "verdict": null,
-    "approvedAt": null,
-    "by": null
-   },
-   "probe": "CI run 44708218250"
-  },
-  {
-   "id": "headless-interrupts",
-   "label": "Headless Interrupts",
-   "kind": "guide",
-   "group": "Human-in-the-loop",
-   "child": true,
-   "docPath": "human-in-the-loop/headless",
-   "reachable": "sidebar",
-   "status": "❌",
-   "findings": [
-    12
-   ],
-   "notes": [
-    "Issue: injectAgentStore(\"ticketing\") needs a ticketing agent that is never shown or registered, and no backend that interrupts is given."
-   ],
-   "block": null,
-   "links": [
+      "id": "use-interrupt",
+      "label": "Pausing the Agent for Input",
+      "kind": "guide",
+      "group": "Human-in-the-loop",
+      "child": true,
+      "docPath": "human-in-the-loop/useInterrupt",
+      "reachable": "sidebar",
+      "status": "❌",
+      "findings": [
+        11
+      ],
+      "notes": [
+        "Issue: no backend that pauses is shown, injectInterrupt(\"default\") watches an agent that never interrupts, and the interrupt payload shape (title/choices) is never given."
+      ],
+      "block": null,
+      "links": [
+        {
+          "text": "Issue",
+          "clip": "OAP-angular-19-UseInterrupt",
+          "loom": "https://www.loom.com/share/7a207b44aded4694936e1631c663b9d0",
+          "narration": "narration/scripts/OAP-angular-19-UseInterrupt.json",
+          "filmed": "2026-11-20"
+        }
+      ],
+      "review": {
+        "verdict": null,
+        "approvedAt": null,
+        "by": null
+      },
+      "probe": "CI run 44708218250"
+    },
     {
-     "text": "Issue",
-     "clip": "OAP-angular-20-HeadlessInterrupts",
-     "loom": null,
-     "narration": "narration/scripts/OAP-angular-20-HeadlessInterrupts.json",
-     "filmed": null
-    }
-   ],
-   "review": {
-    "verdict": null,
-    "approvedAt": null,
-    "by": null
-   },
-   "probe": "CI run 44708218250"
-  },
-  {
-   "id": "webmcp",
-   "label": "WebMCP",
-   "kind": "guide",
-   "group": "Interactivity",
-   "child": false,
-   "docPath": "webmcp",
-   "reachable": "sidebar",
-   "status": "✅",
-   "findings": [],
-   "notes": [
-    "Note: searchOrders is never defined on the page."
-   ],
-   "block": null,
-   "links": [
+      "id": "headless-interrupts",
+      "label": "Headless Interrupts",
+      "kind": "guide",
+      "group": "Human-in-the-loop",
+      "child": true,
+      "docPath": "human-in-the-loop/headless",
+      "reachable": "sidebar",
+      "status": "❌",
+      "findings": [
+        12
+      ],
+      "notes": [
+        "Issue: injectAgentStore(\"ticketing\") needs a ticketing agent that is never shown or registered, and no backend that interrupts is given."
+      ],
+      "block": null,
+      "links": [
+        {
+          "text": "Issue",
+          "clip": "OAP-angular-20-HeadlessInterrupts",
+          "loom": "https://www.loom.com/share/7ec5bc7d24ec4df8be4f28f8152807f8",
+          "narration": "narration/scripts/OAP-angular-20-HeadlessInterrupts.json",
+          "filmed": "2026-11-20"
+        }
+      ],
+      "review": {
+        "verdict": null,
+        "approvedAt": null,
+        "by": null
+      },
+      "probe": "CI run 44708218250"
+    },
     {
-     "text": "WebMCP - Angular",
-     "clip": "OAP-angular-21-WebMcp",
-     "loom": null,
-     "narration": null,
-     "filmed": null
-    }
-   ],
-   "review": {
-    "verdict": null,
-    "approvedAt": null,
-    "by": null
-   },
-   "probe": "CI run 44708218250"
-  },
-  {
-   "id": "multi-agent-subagents",
-   "label": "Sub-agents",
-   "kind": "guide",
-   "group": "Agent capabilities",
-   "child": false,
-   "docPath": "multi-agent/subagents",
-   "reachable": "sidebar",
-   "status": "❌",
-   "findings": [
-    13
-   ],
-   "notes": [
-    "Issue: the Angular snippet is a class fragment (readDelegations, subAgentRendererConfig, SubAgentName never defined) and the Code tab's frontend is React/Next.js only, so there is no Angular delegation log to build; the agent itself also needs demo_agents._common, never shown."
-   ],
-   "block": null,
-   "links": [
+      "id": "webmcp",
+      "label": "WebMCP",
+      "kind": "guide",
+      "group": "Interactivity",
+      "child": false,
+      "docPath": "webmcp",
+      "reachable": "sidebar",
+      "status": "✅",
+      "findings": [],
+      "notes": [
+        "Note: searchOrders is never defined on the page."
+      ],
+      "block": null,
+      "links": [
+        {
+          "text": "WebMCP - Angular",
+          "clip": "OAP-angular-21-WebMcp",
+          "loom": "https://www.loom.com/share/a4e69cc308b84f79af2852da359a5cfd",
+          "narration": null,
+          "filmed": "2026-11-20"
+        }
+      ],
+      "review": {
+        "verdict": null,
+        "approvedAt": null,
+        "by": null
+      },
+      "probe": "CI run 44708218250"
+    },
     {
-     "text": "Issue",
-     "clip": "OAP-angular-22-SubAgents",
-     "loom": null,
-     "narration": "narration/scripts/OAP-angular-22-SubAgents.json",
-     "filmed": null
-    }
-   ],
-   "review": {
-    "verdict": null,
-    "approvedAt": null,
-    "by": null
-   },
-   "probe": "CI run 44708218250"
-  },
-  {
-   "id": "auth",
-   "label": "Authentication",
-   "kind": "guide",
-   "group": null,
-   "child": false,
-   "docPath": "auth",
-   "reachable": "sidebar",
-   "status": "✅",
-   "findings": [],
-   "notes": [
-    "Note: readSessionToken() and verifySession() are never defined on the page."
-   ],
-   "block": null,
-   "links": [
+      "id": "multi-agent-subagents",
+      "label": "Sub-agents",
+      "kind": "guide",
+      "group": "Agent capabilities",
+      "child": false,
+      "docPath": "multi-agent/subagents",
+      "reachable": "sidebar",
+      "status": "❌",
+      "findings": [
+        13
+      ],
+      "notes": [
+        "Issue: the Angular snippet is a class fragment (readDelegations, subAgentRendererConfig, SubAgentName never defined) and the Code tab's frontend is React/Next.js only, so there is no Angular delegation log to build; the agent itself also needs demo_agents._common, never shown."
+      ],
+      "block": null,
+      "links": [
+        {
+          "text": "Issue",
+          "clip": "OAP-angular-22-SubAgents",
+          "loom": "https://www.loom.com/share/d6e7c43ae1fc4415a5793c3b8f3ae715",
+          "narration": "narration/scripts/OAP-angular-22-SubAgents.json",
+          "filmed": "2026-11-20"
+        }
+      ],
+      "review": {
+        "verdict": null,
+        "approvedAt": null,
+        "by": null
+      },
+      "probe": "CI run 44708218250"
+    },
     {
-     "text": "Authentication - Angular",
-     "clip": "OAP-angular-23-Auth",
-     "loom": null,
-     "narration": null,
-     "filmed": null
-    }
-   ],
-   "review": {
-    "verdict": null,
-    "approvedAt": null,
-    "by": null
-   },
-   "probe": "CI run 44708218250"
-  },
-  {
-   "id": "inspector",
-   "label": "Inspector",
-   "kind": "guide",
-   "group": "Debugging",
-   "child": true,
-   "docPath": "inspector",
-   "reachable": "sidebar",
-   "status": "✅",
-   "findings": [],
-   "notes": [],
-   "block": null,
-   "links": [
+      "id": "auth",
+      "label": "Authentication",
+      "kind": "guide",
+      "group": null,
+      "child": false,
+      "docPath": "auth",
+      "reachable": "sidebar",
+      "status": "✅",
+      "findings": [],
+      "notes": [
+        "Note: readSessionToken() and verifySession() are never defined on the page."
+      ],
+      "block": null,
+      "links": [
+        {
+          "text": "Authentication - Angular",
+          "clip": "OAP-angular-23-Auth",
+          "loom": "https://www.loom.com/share/4f361ce99bfc475e99b2f6c8e8256c9e",
+          "narration": null,
+          "filmed": "2026-11-20"
+        }
+      ],
+      "review": {
+        "verdict": null,
+        "approvedAt": null,
+        "by": null
+      },
+      "probe": "CI run 44708218250"
+    },
     {
-     "text": "Inspector - Angular",
-     "clip": "OAP-angular-24-Inspector",
-     "loom": null,
-     "narration": null,
-     "filmed": null
+      "id": "inspector",
+      "label": "Inspector",
+      "kind": "guide",
+      "group": "Debugging",
+      "child": true,
+      "docPath": "inspector",
+      "reachable": "sidebar",
+      "status": "✅",
+      "findings": [],
+      "notes": [],
+      "block": null,
+      "links": [
+        {
+          "text": "Inspector - Angular",
+          "clip": "OAP-angular-24-Inspector",
+          "loom": "https://www.loom.com/share/6829a03c5af94e4b881b3941f0a81043",
+          "narration": null,
+          "filmed": "2026-11-20"
+        }
+      ],
+      "review": {
+        "verdict": null,
+        "approvedAt": null,
+        "by": null
+      },
+      "probe": "CI run 44708218250"
     }
-   ],
-   "review": {
-    "verdict": null,
-    "approvedAt": null,
-    "by": null
-   },
-   "probe": "CI run 44708218250"
-  }
- ],
- "quickstartBlocked": "the Angular quickstart's OpenAI Agents backend is a fragment (_common.py has no imports, SLUG/get_forwarded_headers undefined; agent_server.py uses AGENTS and lifespan that are never defined, and no Agent is ever shown) and no runtime server is shown for Angular, so a reader has no working Angular app to build on",
- "teamDoc": "The team testing doc has no OpenAI Agents Angular column (checked 2026-11-20); no anchor."
+  ],
+  "quickstartBlocked": "the Angular quickstart's OpenAI Agents backend is a fragment (_common.py has no imports, SLUG/get_forwarded_headers undefined; agent_server.py uses AGENTS and lifespan that are never defined, and no Agent is ever shown) and no runtime server is shown for Angular, so a reader has no working Angular app to build on",
+  "teamDoc": "The team testing doc has no OpenAI Agents Angular column (checked 2026-11-20); no anchor."
 }
