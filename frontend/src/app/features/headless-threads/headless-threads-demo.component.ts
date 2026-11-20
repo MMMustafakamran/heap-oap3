@@ -6,8 +6,8 @@
  * (HARNESS) and mounts the verbatim ThreadListComponent (features/threads/thread-list.component.ts)
  * beside it.
  */
-import { Component, signal } from '@angular/core';
-import { CopilotChat } from '@copilotkit/angular';
+import { Component, inject, signal } from '@angular/core';
+import { CopilotChat, CopilotKit } from '@copilotkit/angular';
 
 import { ThreadListComponent } from '../threads/thread-list.component';
 
@@ -28,4 +28,8 @@ import { ThreadListComponent } from '../threads/thread-list.component';
 })
 export class HeadlessThreadsDemoComponent {
   readonly selectedThreadId = signal<string | undefined>(undefined); // HARNESS: never defined on the page
+  constructor() {
+    // HARNESS: the page never says threads need a CopilotKit Intelligence runtime; frontend/server.ts serves one under /threads.
+    inject(CopilotKit).updateRuntime({ runtimeUrl: 'http://localhost:8290/threads/api/copilotkit' });
+  }
 }
