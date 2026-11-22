@@ -116,6 +116,7 @@ export const PAGES = definePages([
     endLine: 45,
     prompt: 'Hi! Tell me a one-line fun fact about the moon.',
     waitAfterPromptMs: 3000,
+    demoMayError: true, // FINDINGS #14: the isolated app never compiles, the demo shows the browser error page
   },
   {
     id: 'threads-drawer',
