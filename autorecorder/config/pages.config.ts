@@ -111,7 +111,7 @@ export const PAGES = definePages([
     videoName: 'ClfHeadlessUi',
     docPath: 'custom-look-and-feel/headless-ui',
     route: 'clf-headless-ui',
-    ideFile: 'frontend/src/app/features/headless/headless-chat.component.ts',
+    ideFile: 'frontend-headless/src/app/features/headless/headless-chat.component.ts', // HARNESS: isolated app (compile break)
     startLine: 1,
     endLine: 45,
     prompt: 'Hi! Tell me a one-line fun fact about the moon.',

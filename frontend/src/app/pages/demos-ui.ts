@@ -11,7 +11,6 @@ import { AuthChatComponent } from '../features/auth/auth-chat.component';
 import { CssDemoComponent } from '../features/chat-ui/css-demo.component';
 import { CustomMessageChatComponent } from '../features/chat-ui/custom-message-chat.component';
 import { PrebuiltDemoComponent } from '../features/chat-ui/prebuilt-demo.component';
-import { HeadlessChatComponent } from '../features/headless/headless-chat.component';
 import { HeadlessThreadsDemoComponent } from '../features/headless-threads/headless-threads-demo.component';
 import { InspectorChatComponent } from '../features/inspector/inspector-chat.component';
 import { VoiceChatComponent } from '../features/media/voice-chat.component';
@@ -52,12 +51,18 @@ export class ClfCssDemo {}
 })
 export class ClfSlotsDemo {}
 
+// HARNESS: the Headless UI page's verbatim code fails `ng serve` compile with today's packages
+// (FINDINGS.md Headless UI entry) and took the whole app down; it is isolated in
+// frontend-headless/ (ng serve :4291) so the other pages can film. This route only forwards there.
 @Component({
   selector: 'app-clf-headless-ui-demo',
-  imports: [DemoFrame, HeadlessChatComponent],
-  template: `<app-demo-frame backTo="/clf-headless-ui" heading="Headless UI"><div style="height: 100%; overflow: auto; padding: 1rem"><app-headless-chat /></div></app-demo-frame>`,
+  template: ``,
 })
-export class ClfHeadlessUiDemo {}
+export class ClfHeadlessUiDemo {
+  constructor() {
+    if (typeof window !== 'undefined') window.location.replace('http://localhost:4291/clf-headless-ui/demo');
+  }
+}
 
 @Component({
   selector: 'app-threads-drawer-page-demo',

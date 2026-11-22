@@ -1,0 +1,12 @@
+{
+ "clip": "OAP-angular-07-ClfHeadlessUi",
+ "page": "clf-headless-ui",
+ "segments": [
+  {"at": "doc", "text": "Ok so this is the Headless UI page for OpenAI Agents with Angular, and I'm reporting a problem on this page."},
+  {"at": "evidence", "text": "So this is the problem, umm, this run agent line from the page doesn't compile anymore with today's packages."},
+  {"at": "ide", "text": "This is my project, I've implemented the exact code from the doc."},
+  {"at": "demo", "text": "Moving on to the demo. It should show my own chat box, but the app never opens, because ng serve fails to compile."},
+  {"at": "notepad", "text": "So basically, the page says you can drive your own chat with run agent, but the build fails with a type error, uh, the Angular package and the core package now ship two different agent types."},
+  {"at": "+", "text": "Ok so yeah, please have a look at this one and get it fixed."}
+ ]
+}

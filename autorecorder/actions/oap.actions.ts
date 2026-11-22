@@ -56,6 +56,9 @@ export const FINDING_EVIDENCE: Record<string, DocEvidence[]> = {
     { text: 'When the backend agent emits an AG-UI interrupt', caption: 'No backend that emits an interrupt is shown' },
     { text: 'injectAgentStore("ticketing")', caption: 'No "ticketing" agent is registered anywhere on the page' },
   ],
+  'clf-headless-ui': [
+    { text: 'await this.copilotKit.core.runAgent({ agent });', caption: 'Fails ng serve: TS2739 AbstractAgent (@copilotkit/angular pins @ag-ui/client 1.0.2, @copilotkit/core uses 1.0.5)' },
+  ],
   'multi-agent-subagents': [
     { text: 'readDelegations(this.agentStore().state())', caption: 'Frontend snippet is a class fragment: readDelegations, subAgentRendererConfig, SubAgentName never defined' },
     { text: 'The Angular Showcase uses this source:', caption: 'The only full frontend (Code tab) is React/Next.js' },
@@ -112,6 +115,13 @@ export const FINDING_NOTES: Record<string, string> = {
     'page says store interruptController holds the pending decision when the backend interrupts',
     'asked to ship the ticket,the agent just replies,no approval ever shows',
     'injectAgentStore ticketing but no ticketing agent exists anywhere and no backend that interrupts',
+  ].join('\n'),
+  'clf-headless-ui': [
+    'page says build ur own chat with injectAgentStore and run it thru copilotKit.core.runAgent',
+    'with the code exactly as given ng serve never compiles,so the app doesnt even open',
+    'error ts2739 type abstractagent is missing _threadId,maxEnforcedEntries on the runAgent line',
+    'copilotkit angular pins ag-ui client 1.0.2 but copilotkit core it pulls in now uses 1.0.5,two different agent types',
+    'thats what u get today from the install line on the quickstart,page doesnt say any version',
   ].join('\n'),
   'multi-agent-subagents': [
     'page says the ui renders a live delegation log while the supervisor delegates',
@@ -518,12 +528,16 @@ export const runSlotsAction: PageActionHandler = async (page, config, _root, ctx
 
 /** Headless UI: type in the hand-written textarea, click Send, the reply appears as an article. */
 export const runHeadlessUiAction: PageActionHandler = async (page, config, _root, ctx) => {
-  await sendPrompt(page, config.prompt, {
+  // HARNESS: the demo lives in frontend-headless/ (:4291), whose verbatim code fails ng serve
+  // compile (FINDINGS.md #14); with no composer on screen the take ends with the finding.
+  await sleep(4000);
+  const sent = await sendPrompt(page, config.prompt, {
     timeoutMs: 15000,
     inputSelector: 'app-headless-chat textarea[aria-label="Message"]',
     submitSelector: 'app-headless-chat button:has-text("Send")',
     messageSelector: 'app-headless-chat article[data-role="assistant"]',
-  });
+  }).then(() => true).catch(() => false);
+  if (!sent) return finish(page, config, ctx, 'Headless UI app never loaded: ng serve on :4291 failed to compile (TS2739 AbstractAgent on core.runAgent).');
   const replied = await page
     .waitForFunction(
       () => {
@@ -539,8 +553,9 @@ export const runHeadlessUiAction: PageActionHandler = async (page, config, _root
     .waitForFunction(() => !document.querySelector('app-headless-chat')?.textContent?.includes('Agent is working'), undefined, { timeout: 60000 })
     .catch(() => {});
   await sleep(1500);
-  if (!replied) ctx.fail('No assistant reply appeared in the headless transcript.');
-  else await glideTo(page, page.locator('app-headless-chat article[data-role="assistant"]').last(), 2500);
+  if (!replied) return finish(page, config, ctx, 'No assistant reply appeared in the headless transcript.');
+  await glideTo(page, page.locator('app-headless-chat article[data-role="assistant"]').last(), 2500);
+  await finish(page, config, ctx);
 };
 
 /** Threads Drawer: the drawer lists the conversation next to the chat. */

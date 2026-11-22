@@ -4,6 +4,8 @@
 #        completed by HARNESS; doc: 8000). One AG-UI endpoint per agent at /<name> (default, subagents).
 #   8290 Copilot Runtime (frontend/server.ts; doc: 8200), /threads mount with CopilotKit Intelligence
 #   4290 ng serve (doc: 4200)
+#   4291 ng serve for frontend-headless/ (Headless UI page only: its verbatim code fails to compile
+#        with today's packages, isolated so the other pages can film)
 # Keys: backend/.env (OPENAI_API_KEY, see backend/.env.example), frontend/.env.intelligence (CPK_INTELLIGENCE_API_KEY).
 cd "$(dirname "$0")"
 mkdir -p logs
@@ -18,4 +20,5 @@ done
 cd frontend
 (npx tsx server.ts > ../logs/runtime-8290.log 2>&1) &
 (npm start > ../logs/angular-4290.log 2>&1) &
+(cd ../frontend-headless && npm start > ../logs/angular-headless-4291.log 2>&1) & # HARNESS: isolated Headless UI app
 wait

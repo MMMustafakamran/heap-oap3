@@ -1,6 +1,6 @@
 # Findings: OpenAIAgents-Angular (OpenAI Agents SDK Python agent + CopilotKit Angular)
 Open doc defects only. Numbers are stable IDs (code cites `FINDINGS.md #N`); gaps are removed findings.
-Stack: `@copilotkit/angular` 0.6.0, `@copilotkit/runtime` 1.85.0, `@ag-ui/client` 1.0.4, `@angular/core` 22.1.x, agent: `ag-ui-openai-agents` 0.1.0, `openai-agents` 0.25.0, `fastapi`/`uvicorn` on Python 3.13 (uv), model gpt-4.1-mini; Node 26.7.0, npm 11, Windows 11 Pro. Docs: https://docs.copilotkit.ai/angular/openai-agents-python (snapshot 2026-11-20). Evidence: CI run 44708218250 (2026-11-20, scope=all).
+Stack: `@copilotkit/angular` 0.6.0, `@copilotkit/runtime` 1.90.0 (`@copilotkit/core` 1.90.0), `@ag-ui/client` 1.0.5, `@angular/core` 22.1.x, agent: `ag-ui-openai-agents` 0.1.0, `openai-agents` 0.25.0, `fastapi`/`uvicorn` on Python 3.13 (uv), model gpt-4.1-mini; Node 26.7.0, npm 11, Windows 11 Pro. Docs: https://docs.copilotkit.ai/angular/openai-agents-python (snapshot 2026-11-20). Evidence: CI run 44708218250 (2026-11-20, scope=all); #14 CI run 45067665138 + local probe 2/2 (2026-11-23).
 
 ## Dev blockers (seen with `ng serve` and normal use of the page)
 
@@ -39,6 +39,13 @@ Stack: `@copilotkit/angular` 0.6.0, `@copilotkit/runtime` 1.85.0, `@ag-ui/client
 **#11 No backend that pauses is shown, and the interrupt payload is undocumented.**
 - **Doc:** "When the backend agent pauses for input" and `injectInterrupt<ReviewRequest>("default")`.
 - **Result:** the quickstart's `default` agent never interrupts, so nothing appears.
+
+### [Headless UI](https://docs.copilotkit.ai/angular/openai-agents-python/custom-look-and-feel/headless-ui)
+**#14 The page's headless chat does not compile with `ng serve` on today's packages.**
+- **Doc:** `await this.copilotKit.core.runAgent({ agent });` (agent from `injectAgentStore("default")`), with the quickstart's `npm install @copilotkit/angular @angular/cdk @copilotkit/runtime`.
+- **Error:** `TS2739: Type 'AbstractAgent' is missing the following properties from type 'AbstractAgent': _threadId, _maxEnforcedEntries, maxEnforcedEntries` at the `runAgent` line; `ng serve` never serves the app.
+- Cause: `@copilotkit/angular` 0.6.0 pins `@ag-ui/client` 1.0.2, while `@copilotkit/core` (`^1.79.1`, now 1.90.0) uses `@ag-ui/client` 1.0.5. Reproduced with the doc's install alone in an empty folder. Worked on 2026-11-20 (`@copilotkit/core` 1.85.0).
+- HARNESS: the page runs in its own app (`frontend-headless/`, :4291, unpatched) because the compile error took the whole frontend down.
 
 ### [Headless Interrupts](https://docs.copilotkit.ai/angular/openai-agents-python/human-in-the-loop/headless)
 **#12 The `ticketing` agent is never shown or registered.**

@@ -269,16 +269,20 @@
       "child": true,
       "docPath": "custom-look-and-feel/headless-ui",
       "reachable": "sidebar",
-      "status": "✅",
-      "findings": [],
-      "notes": [],
+      "status": "❌",
+      "findings": [
+        14
+      ],
+      "notes": [
+        "Issue: runAgent({ agent }) fails ng serve compile (TS2739 AbstractAgent), angular and core ship different ag-ui versions."
+      ],
       "block": null,
       "links": [
         {
-          "text": "Headless UI - Angular",
+          "text": "Issue",
           "clip": "OAP-angular-07-ClfHeadlessUi",
           "loom": "https://www.loom.com/share/5e0f83ff9bba495593385d175777eae3",
-          "narration": null,
+          "narration": "narration/scripts/OAP-angular-07-ClfHeadlessUi.json",
           "filmed": "2026-11-20"
         }
       ],
@@ -287,7 +291,7 @@
         "approvedAt": null,
         "by": null
       },
-      "probe": "CI run 44708218250"
+      "probe": "CI run 45067665138 + local probe 2/2 fail (2026-11-23)"
     },
     {
       "id": "threads-drawer",

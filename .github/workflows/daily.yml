@@ -81,7 +81,7 @@ jobs:
         if: ${{ !inputs.use_lockfile }}
         env:
           UV_PYTHON_DOWNLOADS: never
-        run: node .qa/tools/versions.mjs --npm=frontend --uv=backend --out=plan-out || echo "::warning::versions step crashed; shards install the committed lockfiles"
+        run: node .qa/tools/versions.mjs --npm=frontend,frontend-headless --uv=backend --out=plan-out || echo "::warning::versions step crashed; shards install the committed lockfiles"
       - name: Restore page durations from earlier runs (shard balancing)
         uses: actions/cache/restore@v4
         with:
@@ -275,6 +275,7 @@ jobs:
           cache: npm
           cache-dependency-path: |
             frontend/package-lock.json
+            frontend-headless/package-lock.json
             autorecorder/package-lock.json
       # uv from PyPI: astral-sh/setup-uv kept failing on runners (504 on the release lookup,
       # 300 s cache-lock timeouts). pip + PyPI is one plain download, retried.
@@ -299,14 +300,15 @@ jobs:
         with:
           path: |
             frontend/node_modules
+            frontend-headless/node_modules
             autorecorder/node_modules
             ~/.cache/ms-playwright
-          key: nm-${{ runner.os }}-node22-v1-${{ hashFiles('frontend/package-lock.json', 'autorecorder/package-lock.json') }}
+          key: nm-${{ runner.os }}-node22-v1-${{ hashFiles('frontend/package-lock.json', 'frontend-headless/package-lock.json', 'autorecorder/package-lock.json') }}
       - name: Install dependencies
         timeout-minutes: 20
         run: |
           set -euo pipefail
-          for d in frontend autorecorder; do
+          for d in frontend frontend-headless autorecorder; do
             if [ "${{ steps.nm-cache.outputs.cache-hit }}" = "true" ] && [ -d "$d/node_modules" ]; then echo "$d: node_modules from cache"; continue; fi
             if [ -f "$d/package-lock.json" ]; then npm ci --prefix "$d" --no-audit --no-fund
             else npm install --prefix "$d" --no-audit --no-fund; fi

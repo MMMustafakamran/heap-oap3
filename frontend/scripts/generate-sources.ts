@@ -18,6 +18,7 @@ const TARGETS = [
   'src/styles.css',
   'src/app/app.config.ts',
   'src/app/features',
+  '../frontend-headless/src/app/features', // HARNESS: Headless UI isolated (compile break)
   '../backend/main.py',
   '../backend/pyproject.toml',
   '../backend/.env.example',

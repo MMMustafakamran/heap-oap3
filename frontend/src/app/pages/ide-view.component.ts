@@ -188,7 +188,7 @@ import { SOURCES, readSource } from '../lib/generated-sources';
                   class="flex items-center gap-1.5 py-0.5 px-2 rounded cursor-pointer hover:bg-[#2a2d2e]"
                   [class.bg-[#37373d]]="currentFile().includes('headless-chat')"
                   [class.text-white]="currentFile().includes('headless-chat')"
-                  (click)="selectFile('src/app/features/headless/headless-chat.component.ts', 40)"
+                  (click)="selectFile('../frontend-headless/src/app/features/headless/headless-chat.component.ts', 40)"
                 >
                   <span class="text-[#3178c6]">TS</span>
                   <span>headless-chat.component.ts</span>

@@ -1,0 +1,9 @@
+{
+ "text": "So basically, the page says you can drive your own chat with run agent, but the build fails with a type error, uh, the Angular package and the core package now ship two different agent types.",
+ "model": "s2.1-pro-free",
+ "refSha256": "2c9d0ecf4608feacc07c88e869cd4dec601481306a939b7be92fc1bff521a727",
+ "duration": 13.096,
+ "file": "25984327b29d94d5def372bcb005f3e2.mp3",
+ "clip": "OAP-angular-07-ClfHeadlessUi",
+ "at": "notepad"
+}
