@@ -363,9 +363,7 @@
    "reachable": "sidebar",
    "status": "✅",
    "findings": [],
-   "notes": [
-    "Note: the snippet has no imports and never defines BackgroundToolArgs / resolveGradient."
-   ],
+   "notes": [],
    "block": null,
    "links": [
     {
@@ -581,9 +579,7 @@
    "reachable": "sidebar",
    "status": "✅",
    "findings": [],
-   "notes": [
-    "Note: expected to work: the OpenAI Agents adapter appends connectAgentContext entries to the instructions."
-   ],
+   "notes": [],
    "block": null,
    "links": [
     {
@@ -611,9 +607,7 @@
    "reachable": "sidebar",
    "status": "✅",
    "findings": [],
-   "notes": [
-    "Note: the page never says where ApprovalToolsService is provided."
-   ],
+   "notes": [],
    "block": null,
    "links": [
     {
@@ -705,9 +699,7 @@
    "reachable": "sidebar",
    "status": "✅",
    "findings": [],
-   "notes": [
-    "Note: searchOrders is never defined on the page."
-   ],
+   "notes": [],
    "block": null,
    "links": [
     {
@@ -767,9 +759,7 @@
    "reachable": "sidebar",
    "status": "✅",
    "findings": [],
-   "notes": [
-    "Note: readSessionToken() and verifySession() are never defined on the page."
-   ],
+   "notes": [],
    "block": null,
    "links": [
     {
