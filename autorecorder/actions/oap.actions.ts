@@ -700,7 +700,13 @@ export const runInterruptAction: PageActionHandler = async (page, config, _root,
   const msgCount = await sendPrompt(page, config.prompt, { timeoutMs: 15000 });
   let decisionLost = '';
   const host = page.locator(config.id === 'use-interrupt' ? 'app-interrupt-panel section' : 'app-ticket-approval section').first();
-  const shown = await host.waitFor({ state: 'visible', timeout: 90000 }).then(() => true).catch(() => false);
+  // Wait for the interrupt UI or a finished plain reply, then give the UI 15 s more (a 90 s blind
+  // wait after the reply froze the clip, review 2026-11-23).
+  let shown = await Promise.race([
+    host.waitFor({ state: 'visible', timeout: 90000 }).then(() => true).catch(() => false),
+    settle(page, msgCount, ctx).then(() => false).catch(() => false),
+  ]);
+  if (!shown) shown = await host.waitFor({ state: 'visible', timeout: 15000 }).then(() => true).catch(() => false);
   let resumed = false;
   if (shown) {
     await glideTo(page, host, 2000);
