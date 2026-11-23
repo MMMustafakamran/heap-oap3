@@ -775,7 +775,8 @@
     "approvedAt": null,
     "by": null
    },
-   "probe": "CI run 44708218250"
+   "probe": "CI run 44708218250",
+   "excluded": "Backend section of the docs sidebar (owner 2026-11-23: Backend pages out of scope)"
   },
   {
    "id": "inspector",
@@ -803,7 +804,8 @@
     "approvedAt": null,
     "by": null
    },
-   "probe": "CI run 44708218250"
+   "probe": "CI run 44708218250",
+   "excluded": "Backend section of the docs sidebar (owner 2026-11-23: Backend pages out of scope)"
   }
  ],
  "quickstartBlocked": "the Angular quickstart's OpenAI Agents backend is a fragment (_common.py has no imports, SLUG/get_forwarded_headers undefined; agent_server.py uses AGENTS and lifespan that are never defined, and no Agent is ever shown) and no runtime server is shown for Angular, so a reader has no working Angular app to build on",
