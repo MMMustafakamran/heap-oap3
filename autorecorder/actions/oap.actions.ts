@@ -448,33 +448,20 @@ export const runAttachmentsAction: PageActionHandler = async (page, config, root
 
 /**
  * Voice: with the backend from the generic /voice page (linked as "Voice backend setup"; ported in
- * frontend/server.ts), the composer shows the mic. HARNESS: no real mic in a recorded browser, so
- * getUserMedia is fed the sample phrase ("What is the weather in Tokyo?", frontend/public/voice-sample.wav)
- * and the audio really goes through the runtime's /transcribe to OpenAI.
+ * frontend/server.ts), the composer shows the mic. The take's browser plays `fakeMicWav`
+ * (pages.config.ts: frontend/public/voice-sample.wav, "What is the weather in Tokyo?") as its microphone
+ * (Chromium fake-media flags), and the audio really goes through the runtime's /transcribe to OpenAI.
  */
 export const runVoicePageAction: PageActionHandler = async (page, _config, _root, ctx) => {
   const mic = page.locator('copilot-chat-input button[aria-label="Transcribe"]').first();
-  if (!(await mic.isVisible().catch(() => false))) {
+  if (!(await mic.waitFor({ state: 'visible', timeout: 30000 }).then(() => true, () => false))) {
     mark('error', 'no mic button in the composer');
     ctx.fail('No mic (Transcribe) button in the composer: runtime /info does not report audioFileTranscriptionEnabled: true.');
     return;
   }
-  await page.evaluate(() => {
-    navigator.mediaDevices.getUserMedia = async () => {
-      const ac = new AudioContext();
-      await ac.resume();
-      const buf = await ac.decodeAudioData(await (await fetch('/voice-sample.wav')).arrayBuffer());
-      const src = ac.createBufferSource();
-      src.buffer = buf;
-      const dest = ac.createMediaStreamDestination();
-      src.connect(dest);
-      src.start();
-      return dest.stream;
-    };
-  });
   await glideClick(page, mic);
   mark('action', 'recording the sample phrase');
-  await sleep(3500);
+  await sleep(4000); // the wav is ~2.3 s of speech
   await glideClick(page, page.locator('copilot-chat-input button[aria-label="Finish"]').first());
   const textarea = page.locator('copilot-chat-input textarea').first();
   const got = await page

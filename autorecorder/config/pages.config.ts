@@ -76,7 +76,10 @@ export const PAGES = definePages([
     ideFile: 'frontend/src/app/features/media/voice-chat.component.ts',
     startLine: 1,
     endLine: 39,
-    prompt: 'Hi, can you hear me? Reply in one short sentence.',
+    // Spoken through the mic, not typed: the wav is the take's fake microphone (runVoicePageAction).
+    prompt: 'What is the weather in Tokyo?',
+    fakeMicWav: '../frontend/public/voice-sample.wav',
+    timeouts: { replyStartMs: 120_000, replyStreamMs: 90_000 },
     waitAfterPromptMs: 3000,
   },
   {
