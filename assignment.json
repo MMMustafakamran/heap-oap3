@@ -105,9 +105,9 @@
     {
      "text": "Not Working",
      "clip": "OAP-angular-01-Quickstart",
-     "loom": "https://www.loom.com/share/a1946030a55542eca845864621ebe292",
+     "loom": "https://www.loom.com/share/89a3178ebc284d16889d6cd913e1bcc9",
      "narration": "narration/scripts/OAP-angular-01-Quickstart.json",
-     "filmed": "2026-11-23"
+     "filmed": "2026-11-24"
     }
    ],
    "review": {
@@ -135,9 +135,9 @@
     {
      "text": "Prebuilt Components - Angular",
      "clip": "OAP-angular-02-PrebuiltComponents",
-     "loom": "https://www.loom.com/share/d57d7cfcf6f047b2b4d0c11a912bab22",
+     "loom": "https://www.loom.com/share/a775cfcd1c3c40828836c1ba58057fce",
      "narration": null,
-     "filmed": "2026-11-23"
+     "filmed": "2026-11-24"
     }
    ],
    "review": {
@@ -163,9 +163,9 @@
     {
      "text": "Multimodal Attachments - Angular",
      "clip": "OAP-angular-03-MultimodalAttachments",
-     "loom": "https://www.loom.com/share/4a7d7769c3d24598974c43735a381386",
+     "loom": "https://www.loom.com/share/fef4d5920eba49a4a090b1db028b59ca",
      "narration": null,
-     "filmed": "2026-11-23"
+     "filmed": "2026-11-24"
     }
    ],
    "review": {
@@ -193,9 +193,9 @@
     {
      "text": "Voice - Angular",
      "clip": "OAP-angular-04-Voice",
-     "loom": "https://www.loom.com/share/1219df97158244f5842f24018b5fc849",
+     "loom": "https://www.loom.com/share/0469c4bb793d4b8fada1dad6ac5900ca",
      "narration": null,
-     "filmed": "2026-11-23"
+     "filmed": "2026-11-24"
     }
    ],
    "review": {
@@ -221,9 +221,9 @@
     {
      "text": "CSS Customization - Angular",
      "clip": "OAP-angular-05-ClfCss",
-     "loom": "https://www.loom.com/share/6aa122ad3fd34408a22b2266ed00f0e9",
+     "loom": "https://www.loom.com/share/89c90aeec1544550aead9effb63370ce",
      "narration": null,
-     "filmed": "2026-11-23"
+     "filmed": "2026-11-24"
     }
    ],
    "review": {
@@ -249,9 +249,9 @@
     {
      "text": "Slots (Subcomponents) - Angular",
      "clip": "OAP-angular-06-ClfSlots",
-     "loom": "https://www.loom.com/share/f678394f82944c0ca396e3ac6197cbcb",
+     "loom": "https://www.loom.com/share/699c80a6ef0d4a6b868ec6935caf58ca",
      "narration": null,
-     "filmed": "2026-11-23"
+     "filmed": "2026-11-24"
     }
    ],
    "review": {
@@ -281,9 +281,9 @@
     {
      "text": "Issue",
      "clip": "OAP-angular-07-ClfHeadlessUi",
-     "loom": "https://www.loom.com/share/b498f10bc4ed4f13aee21b1b7406e1fb",
+     "loom": "https://www.loom.com/share/0732a9e09cfe4f0a9e133ed4ea560575",
      "narration": "narration/scripts/OAP-angular-07-ClfHeadlessUi.json",
-     "filmed": "2026-11-23"
+     "filmed": "2026-11-24"
     }
    ],
    "review": {
@@ -311,9 +311,9 @@
     {
      "text": "Threads Drawer - Angular",
      "clip": "OAP-angular-08-ThreadsDrawer",
-     "loom": "https://www.loom.com/share/4b110ea2958d4815b56865ba679feaa9",
+     "loom": "https://www.loom.com/share/8f3fdf7937cf4d3da18d3ccb296d03f6",
      "narration": null,
-     "filmed": "2026-11-23"
+     "filmed": "2026-11-24"
     }
    ],
    "review": {
@@ -341,9 +341,9 @@
     {
      "text": "Headless Threads - JS",
      "clip": "OAP-angular-09-HeadlessThreads",
-     "loom": "https://www.loom.com/share/dbeff8f33f5a4bcc87466b57ae71dea9",
+     "loom": "https://www.loom.com/share/27e81fb2a2a444a89ce12291b2a5e211",
      "narration": null,
-     "filmed": "2026-11-23"
+     "filmed": "2026-11-24"
     }
    ],
    "review": {
@@ -369,9 +369,9 @@
     {
      "text": "Frontend Tools - Angular",
      "clip": "OAP-angular-10-FrontendTools",
-     "loom": "https://www.loom.com/share/539c50cda2b941deb5b6c969cb35fea6",
+     "loom": "https://www.loom.com/share/3879d8116b7c4a6c9b2020cc0c74c41a",
      "narration": null,
-     "filmed": "2026-11-23"
+     "filmed": "2026-11-24"
     }
    ],
    "review": {
@@ -397,9 +397,9 @@
     {
      "text": "Components as Tools - Angular",
      "clip": "OAP-angular-11-GenUiToolBased",
-     "loom": "https://www.loom.com/share/d75c4506b5f448c3868ed799dedaa002",
+     "loom": "https://www.loom.com/share/d1f41802b9fe47b59c73b5f2cbdc3c2d",
      "narration": null,
-     "filmed": "2026-11-23"
+     "filmed": "2026-11-24"
     }
    ],
    "review": {
@@ -429,9 +429,9 @@
     {
      "text": "Issue",
      "clip": "OAP-angular-12-GenUiToolRendering",
-     "loom": "https://www.loom.com/share/63667d67b78f4b8a8b5ae79d48ae127e",
+     "loom": "https://www.loom.com/share/8087cceabae4421aaa8bf02d2376247d",
      "narration": "narration/scripts/OAP-angular-12-GenUiToolRendering.json",
-     "filmed": "2026-11-23"
+     "filmed": "2026-11-24"
     }
    ],
    "review": {
@@ -461,9 +461,9 @@
     {
      "text": "Issue",
      "clip": "OAP-angular-13-A2ui",
-     "loom": "https://www.loom.com/share/5e465bb5b0d4450682746636af90ba05",
+     "loom": "https://www.loom.com/share/2f32fa7cbdf94cbd8a795b4ef2ab60c6",
      "narration": "narration/scripts/OAP-angular-13-A2ui.json",
-     "filmed": "2026-11-23"
+     "filmed": "2026-11-24"
     }
    ],
    "review": {
@@ -493,9 +493,9 @@
     {
      "text": "Issue",
      "clip": "OAP-angular-14-McpApps",
-     "loom": "https://www.loom.com/share/74798966d7e1419382d2c48c4b874d21",
+     "loom": "https://www.loom.com/share/9585b7360bad4ea0a9d600f1d3ef46bb",
      "narration": "narration/scripts/OAP-angular-14-McpApps.json",
-     "filmed": "2026-11-23"
+     "filmed": "2026-11-24"
     }
    ],
    "review": {
@@ -525,9 +525,9 @@
     {
      "text": "Issue",
      "clip": "OAP-angular-15-OpenGenerativeUi",
-     "loom": "https://www.loom.com/share/635fdb2d8ba24fa69dddaff9e943f595",
+     "loom": "https://www.loom.com/share/c4ff47e0744a4b7d8c47b3697efc9026",
      "narration": "narration/scripts/OAP-angular-15-OpenGenerativeUi.json",
-     "filmed": "2026-11-23"
+     "filmed": "2026-11-24"
     }
    ],
    "review": {
@@ -557,9 +557,9 @@
     {
      "text": "Issue",
      "clip": "OAP-angular-16-SharedState",
-     "loom": "https://www.loom.com/share/dc2758f2728a44b8801aa503235f8018",
+     "loom": "https://www.loom.com/share/a12b0cd4629548729d35e11961856c9f",
      "narration": "narration/scripts/OAP-angular-16-SharedState.json",
-     "filmed": "2026-11-23"
+     "filmed": "2026-11-24"
     }
    ],
    "review": {
@@ -585,9 +585,9 @@
     {
      "text": "Agent Read-Only Context - JS",
      "clip": "OAP-angular-17-AgentReadonly",
-     "loom": "https://www.loom.com/share/f6d3c53908804bc0a7bc2f06bafb70de",
+     "loom": "https://www.loom.com/share/051b72e0b3574e889f58d25940b85cc7",
      "narration": null,
-     "filmed": "2026-11-23"
+     "filmed": "2026-11-24"
     }
    ],
    "review": {
@@ -613,9 +613,9 @@
     {
      "text": "HITL Overview - Angular",
      "clip": "OAP-angular-18-HitlOverview",
-     "loom": "https://www.loom.com/share/84d21578b5cb4e038b08839dcffaf341",
+     "loom": "https://www.loom.com/share/4ba3aa1e66114396b915e5e531f63532",
      "narration": null,
-     "filmed": "2026-11-23"
+     "filmed": "2026-11-24"
     }
    ],
    "review": {
@@ -645,9 +645,9 @@
     {
      "text": "Issue",
      "clip": "OAP-angular-19-UseInterrupt",
-     "loom": "https://www.loom.com/share/be3ec953a2f146e0a23361d0604fab50",
+     "loom": "https://www.loom.com/share/c11c185591d34aaab33785131bfe6852",
      "narration": "narration/scripts/OAP-angular-19-UseInterrupt.json",
-     "filmed": "2026-11-23"
+     "filmed": "2026-11-24"
     }
    ],
    "review": {
@@ -677,9 +677,9 @@
     {
      "text": "Issue",
      "clip": "OAP-angular-20-HeadlessInterrupts",
-     "loom": "https://www.loom.com/share/2f2f52eb3e3f4bbd9eabe6d39760403b",
+     "loom": "https://www.loom.com/share/4e8ac308c7d540558b83ac4db2e25678",
      "narration": "narration/scripts/OAP-angular-20-HeadlessInterrupts.json",
-     "filmed": "2026-11-23"
+     "filmed": "2026-11-24"
     }
    ],
    "review": {
@@ -705,9 +705,9 @@
     {
      "text": "WebMCP - Angular",
      "clip": "OAP-angular-21-WebMcp",
-     "loom": "https://www.loom.com/share/b20edc647cb74ed898899ee4d569ec3a",
+     "loom": "https://www.loom.com/share/8d9b6e42dee84e22bb5260424047b04b",
      "narration": null,
-     "filmed": "2026-11-23"
+     "filmed": "2026-11-24"
     }
    ],
    "review": {
@@ -737,9 +737,9 @@
     {
      "text": "Issue",
      "clip": "OAP-angular-22-SubAgents",
-     "loom": "https://www.loom.com/share/ec9764afc09c4782bd3f92443abbeb7d",
+     "loom": "https://www.loom.com/share/13c22e9a5ade4a679aa040a34c257b33",
      "narration": "narration/scripts/OAP-angular-22-SubAgents.json",
-     "filmed": "2026-11-23"
+     "filmed": "2026-11-24"
     }
    ],
    "review": {
