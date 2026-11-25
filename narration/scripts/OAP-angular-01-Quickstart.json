@@ -20,46 +20,26 @@
   },
   {
    "at": "added",
-   "text": "These imports in the common file weren't on the page, so I added them."
+   "text": "In the common file, umm, the imports, the constants and the forwarded headers helper weren't on the page, so I added them."
   },
   {
    "at": "added#2",
-   "text": "Same here, umm, more imports the page never shows."
+   "text": "In the agent server, the imports weren't given either, so I added them."
   },
   {
    "at": "added#3",
-   "text": "These two constants are used but never defined on the page."
-  },
-  {
-   "at": "added#4",
-   "text": "And this helper, get forwarded headers, wasn't on the page either."
-  },
-  {
-   "at": "added#5",
-   "text": "In the agent server, the imports weren't given, so I added them."
-  },
-  {
-   "at": "added#6",
-   "text": "These ones too, the agent and FastAPI imports."
-  },
-  {
-   "at": "added#7",
-   "text": "This import of the common file, I added it myself."
-  },
-  {
-   "at": "added#8",
    "text": "The lifespan is used but never defined, so I wrote it."
   },
   {
-   "at": "added#9",
+   "at": "added#4",
    "text": "This part, the agent and the agents registry, wasn't on the page, so I added it myself."
   },
   {
-   "at": "added#10",
+   "at": "added#5",
    "text": "And the page never says how to start the server, so I added this."
   },
   {
-   "at": "added#11",
+   "at": "added#6",
    "text": "Uh, and this whole runtime server wasn't on the page, so I added it myself."
   },
   {

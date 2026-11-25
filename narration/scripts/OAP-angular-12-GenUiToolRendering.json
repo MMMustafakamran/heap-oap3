@@ -20,11 +20,7 @@
   },
   {
    "at": "added",
-   "text": "These imports weren't on the page, the snippet has none, so I added them."
-  },
-  {
-   "at": "added#2",
-   "text": "And the component around the snippet wasn't on the page, so I added it myself."
+   "text": "These imports and the component around the snippet weren't on the page, so I added them myself."
   },
   {
    "at": "demo",
