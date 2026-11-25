@@ -6,12 +6,13 @@
  * agent has no getWeather tool, and the page shows no backend for one).
  * https://docs.copilotkit.ai/angular/openai-agents-python/generative-ui/tool-rendering
  */
-import { Component } from '@angular/core'; // HARNESS: the page shows the call without a host component
-import { CopilotChat, registerFrontendTool } from '@copilotkit/angular'; // HARNESS: the snippet has no imports
-import { z } from 'zod'; // HARNESS: the snippet has no imports
+import { Component } from '@angular/core'; // ADDED: the page shows the call without a host component
+import { CopilotChat, registerFrontendTool } from '@copilotkit/angular'; // ADDED: the snippet has no imports
+import { z } from 'zod'; // ADDED: the snippet has no imports
 
 import { WeatherCardComponent } from './weather-card.component';
 
+// ADDED: the host component around the snippet, the page never shows it
 @Component({
   selector: 'app-tool-rendering-chat',
   imports: [CopilotChat],

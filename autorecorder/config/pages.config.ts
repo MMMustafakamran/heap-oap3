@@ -6,6 +6,7 @@
  * Notepad note (actions/oap.actions.ts).
  */
 import { definePages } from '../core/types';
+import { expectUiFor } from '../core/ui-log';
 
 export const SKIP_RECORDING: Record<string, string> = {};
 
@@ -33,11 +34,13 @@ export const PAGES = definePages([
       PKG,
       { filePath: 'frontend/src/app/app.config.ts', startLine: 1, endLine: 50 },
       COMMON,
-      { ...AGENT, startLine: 1, endLine: 50, addedText: 'AGENTS = {  # HARNESS' },
-      { ...RUNTIME, addedText: '  process.env["AGENT_URL"] ?? "http://localhost:8291/default"; // HARNESS: OpenAI Agents agent server, port 8291 (doc: 8000)' },
+      { ...AGENT, startLine: 1, endLine: 50 },
+      RUNTIME,
     ],
     prompt: 'Hey, are you connected? Tell me a quick fun fact about kites.',
     waitAfterPromptMs: 3000,
+    // The page promises a chat that answers through the agent server.
+    expectUi: [{ name: 'assistant-reply', selector: 'copilot-chat-assistant-message' }],
   },
   // Chat UI, threads, inspector, auth (2026-11-18): actions in oap.actions.ts.
   {
@@ -192,6 +195,8 @@ export const PAGES = definePages([
     ],
     prompt: 'What is the weather in Paris right now?',
     waitAfterPromptMs: 3000,
+    // The page promises a weather card with the city and the tool result.
+    expectUi: expectUiFor('tool-card', { name: 'weather-card', selector: 'app-weather-card article' }),
   },
   {
     id: 'a2ui',

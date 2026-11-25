@@ -1,0 +1,9 @@
+{
+ "text": "The lifespan is used but never defined, so I wrote it.",
+ "model": "s2.1-pro-free",
+ "refSha256": "2c9d0ecf4608feacc07c88e869cd4dec601481306a939b7be92fc1bff521a727",
+ "duration": 3.901,
+ "file": "b0b468eac932db6672249e8e760b9000.mp3",
+ "clip": "OAP-angular-01-Quickstart",
+ "at": "added#8"
+}

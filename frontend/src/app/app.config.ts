@@ -34,13 +34,13 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(),
     // quickstart : connect to copilot runtime start
     provideCopilotKit({
-      runtimeUrl: 'http://localhost:8290/api/copilotkit', // HARNESS: doc says :8200, runtime runs on 8290 (workspace port plan)
+      runtimeUrl: 'http://localhost:8290/api/copilotkit', // CHANGED: doc says :8200, runtime runs on 8290 (workspace port plan)
       // a2ui : recover incomplete streams start
       a2ui: {
         recovery: { showAfterMs: 2_000, showAfterAttempts: 2 },
       },
       // a2ui : recover incomplete streams end
-      // HARNESS: the Frontend tools page's Open Generative UI config (openGenerativeUI with
+      // CHANGED: the Frontend tools page's Open Generative UI config (openGenerativeUI with
       // setDashboardFilter) is kept verbatim in doc-verbatim/frontend-tools/app.config.ts, not here:
       // registered at the root it gave every page's agent a generateSandboxedUi tool, which on the
       // Native generative UI demo answered with an empty message instead of text.

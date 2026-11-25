@@ -1,17 +1,17 @@
 # HARNESS: the quickstart's _common.py (docs.copilotkit.ai/angular/openai-agents-python, "Connect the
 # selected agent backend") shows only the functions below. It never shows an import, SLUG,
-# _FORWARDED_PREFIXES or get_forwarded_headers (FINDINGS.md #1). Lines marked HARNESS are added.
-import os  # HARNESS
+# _FORWARDED_PREFIXES or get_forwarded_headers (FINDINGS.md #1). Lines marked ADDED are added.
+import os  # ADDED: no import on the page
 
-import httpx  # HARNESS
-from agents import set_default_openai_client, set_tracing_disabled  # HARNESS
-from openai import AsyncOpenAI  # HARNESS
+import httpx  # ADDED: no import on the page
+from agents import set_default_openai_client, set_tracing_disabled  # ADDED: no import on the page
+from openai import AsyncOpenAI  # ADDED: no import on the page
 
-SLUG = "openai-agents-python"  # HARNESS: never defined on the page
-_FORWARDED_PREFIXES = ("x-aimock-",)  # HARNESS: never defined on the page
+SLUG = "openai-agents-python"  # ADDED: never defined on the page
+_FORWARDED_PREFIXES = ("x-aimock-",)  # ADDED: never defined on the page
 
 
-def get_forwarded_headers() -> dict[str, str]:  # HARNESS: never defined on the page (no mock server here)
+def get_forwarded_headers() -> dict[str, str]:  # ADDED: never defined on the page (no mock server here)
     return {}
 
 

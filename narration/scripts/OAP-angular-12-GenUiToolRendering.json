@@ -19,6 +19,14 @@
    "text": "This is my project, I've implemented the exact code from the doc."
   },
   {
+   "at": "added",
+   "text": "These imports weren't on the page, the snippet has none, so I added them."
+  },
+  {
+   "at": "added#2",
+   "text": "And the component around the snippet wasn't on the page, so I added it myself."
+  },
+  {
    "at": "demo",
    "text": "Moving on to the demo. I asked for the weather, it should show the weather on the card, but the result is just the app's HTML page."
   },
