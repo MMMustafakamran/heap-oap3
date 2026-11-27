@@ -9,8 +9,11 @@
 # Keys: backend/.env (OPENAI_API_KEY, see backend/.env.example), frontend/.env.intelligence (CPK_INTELLIGENCE_API_KEY).
 cd "$(dirname "$0")"
 mkdir -p logs
+# CHANGED: every server runs in a real terminal (.qa/tools/ptyrun.cjs): logs/<name>.log as before,
+# plus logs/<name>.log.pty, the raw terminal the recorder shows on a failed take.
+PTYRUN="node $(pwd)/.qa/tools/ptyrun.cjs"
 
-(cd backend && uv run --env-file .env python agent_server.py > ../logs/backend-8291.log 2>&1) &
+(cd backend && $PTYRUN ../logs/backend-8291.log --name "uv run python agent_server.py" -- uv run --env-file .env python agent_server.py) &
 echo "waiting for the agent server on :8291 ..."
 for _ in $(seq 1 90); do
   curl -sf http://localhost:8291/health > /dev/null 2>&1 && break
@@ -18,7 +21,7 @@ for _ in $(seq 1 90); do
 done
 
 cd frontend
-(npx tsx server.ts > ../logs/runtime-8290.log 2>&1) &
-(npm start > ../logs/angular-4290.log 2>&1) &
-(cd ../frontend-headless && npm start > ../logs/angular-headless-4291.log 2>&1) & # HARNESS: isolated Headless UI app
+($PTYRUN ../logs/runtime-8290.log --name "npx tsx server.ts" -- npx tsx server.ts) &
+($PTYRUN ../logs/angular-4290.log --name "npm start" -- npm start) &
+(cd ../frontend-headless && $PTYRUN ../logs/angular-headless-4291.log --name "npm start" -- npm start) & # HARNESS: isolated Headless UI app
 wait
